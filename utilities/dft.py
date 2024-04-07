@@ -50,10 +50,13 @@ def dft2(signal: Sequence) -> np.ndarray:
 
     basis_images = fourier_basis_2d(M)
 
-    frequency_domain = np.zeros(shape= signal.shape, dtype= np.complex128)
-    for row in range(M):
-        for col in range(N):
-            frequency_domain[row, col] = np.multiply(basis_images[row, col], signal).sum()
+    # frequency_domain = np.zeros(shape= signal.shape, dtype= np.complex128)
+    # for row in range(M):
+    #     for col in range(N):
+    #         frequency_domain[row, col] = np.multiply(basis_images[row, col], signal).sum()
+
+    # this is equivalent to above commented codes
+    frequency_domain = np.tensordot(basis_images, signal, axes=([2, 3], [0, 1]))
 
     return frequency_domain
 
@@ -64,10 +67,13 @@ def idft2(frequency_domain: Sequence):
     
     basis_images = np.conjugate(fourier_basis_2d(M)) / (M * N)
 
-    spatial_domain = np.zeros(shape= frequency_domain.shape, dtype= np.complex128)
-    for row in range(M):
-        for col in range(N):
-            spatial_domain[row, col] = np.multiply(basis_images[row, col], frequency_domain).sum()
+    # spatial_domain = np.zeros(shape= frequency_domain.shape, dtype= np.complex128)
+    # for row in range(M):
+    #     for col in range(N):
+    #         spatial_domain[row, col] = np.multiply(basis_images[row, col], frequency_domain).sum()
+
+    # this is equivalent to above commented codes
+    spatial_domain = np.tensordot(basis_images, frequency_domain, axes=([2, 3], [0, 1]))
 
     return spatial_domain
 
