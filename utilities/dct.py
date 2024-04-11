@@ -92,23 +92,3 @@ def idct2(signal: Sequence):
     spatial_domain = np.tensordot(basis_images, signal, axes=([2, 3], [0, 1]))
 
     return spatial_domain
-
-# masks
-def triangle_mask(block_size: int, threshold: float= 1.5) -> np.ndarray:
-    mask = np.zeros((block_size, block_size))
-
-    for i in range(int(block_size // threshold)):
-        mask[i, :int(block_size // threshold) -i - 1] = 1
-    
-    return mask
-
-def rectangle_mask(block_size: int, threshold: int = 2) -> np.ndarray:
-    mask = np.zeros((block_size, block_size))
-    mask[:threshold] = 1
-    mask[:, :threshold] = 1
-    return mask
-
-def block_mask(block_size: int, threshold: int = 2) -> np.ndarray:
-    mask = np.zeros((block_size, block_size))
-    mask[:threshold, :threshold] = 1
-    return mask
