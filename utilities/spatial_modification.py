@@ -85,7 +85,7 @@ def bilinear_interpolation(image, new_height, new_width):
 
     return new_image
 
-def histogram_2d(img: np.ndarray, rng: int) -> tuple[np.ndarray]:
+def histogram(img: np.ndarray, rng: int) -> tuple[np.ndarray]:
     assert img.ndim == 2, 'This function can only calculate histogram for 2d images.'
 
     idx, counts = np.unique(img, return_counts= True)
