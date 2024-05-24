@@ -1,3 +1,5 @@
+# note: this implementation may not be an exact replica of JPEG, but it captures the core concept.
+
 import numpy as np
 from scipy import fftpack
 from numpy import typing as npt
