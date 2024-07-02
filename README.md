@@ -83,17 +83,39 @@ pip install -r requirements.txt
    - Open `.ipynb` files using [Jupyter-notebook](https://jupyter.org/)
    - Jupyter-notebook is integrated with both [VSCode](https://code.visualstudio.com/) & [Google Colab](https://colab.research.google.com/)
 
-## 📝 TODO
-   - [ ] 04: Adaptive Contrast Enhancement (ACE)
-   - [ ] 04: Historam Matching (Specification)
-   - [ ] 14: Sparse Optical Flow using Lucas-Kanade
-
 ## 🔍 Find Me
 Any mistakes, suggestions, or contributions? Feel free to reach out to me at:
    - 📍[Linktree](https://linktr.ee/mr_pylin)
    
 I look forward to connecting with you! 
 
+## 🔗 Usefull Links
+   - **ffmpeg & ffprobe**:
+      - ffmpeg is a Swiss Army knife for media, converting and manipulating audio and video files in a wide range of formats.
+      - Link: [github.com/BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
+   - **YUV4MPEG Videos**:
+      - Derf's video collection provides uncompressed YUV4MPEG clips for testing video codecs.
+      - Link: [media.xiph.org/video/derf](https://media.xiph.org/video/derf/)
+   - **Video Quality Measurement Tool (VQMT)**:
+      - It is a software program designed to analyze the quality of digital video and images.
+      - Link: [compression.ru/video/quality_measure](http://www.compression.ru/video/quality_measure/vqmt_download.html)
+   - **yuv-player**:
+      - Lightweight YUV player which supports various YUV format.
+      - Link: [github.com/Tee0125/yuvplayer](https://github.com/Tee0125/yuvplayer)
+   - **H.264 (AVC) codec**:
+      - The most widely used video compression standard, offering high quality at low bitrates.
+      - Link: [vcgit.hhi.fraunhofer.de/jvet/JM](https://vcgit.hhi.fraunhofer.de/jvet/JM)
+   - **H.265 (HEVC) codec**:
+      - Successor to H.264, offering even better compression for even higher quality or lower bitrates.
+      - Link: [vcgit.hhi.fraunhofer.de/jvet/HM](https://vcgit.hhi.fraunhofer.de/jvet/HM)
+   - **H.266 (VVC) codec**:
+      - The latest video compression standard, offering significant efficiency improvements over H.265 for high-resolution streaming and future video applications.
+      - Link: [vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM](https://vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM)
+
+## 📝 TODO
+   - [ ] 04: Adaptive Contrast Enhancement (ACE)
+   - [ ] 04: Historam Matching (Specification)
+   - [ ] 14: Sparse Optical Flow using Lucas-Kanade
 
 ## ©️ Resource Credits
    - Most of the images are taken from the book [Digital Image Processing](https://www.amazon.com/Digital-Image-Processing-3Rd-Edn/dp/9332570329), 3rd Edition, by `Rafael C. Gonzalez` and `Richard E. Woods`.
@@ -101,15 +123,15 @@ I look forward to connecting with you!
 
 | Image                                                                                                    | Copyright Owner                       | Address                                                                                               |
 |----------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------------|
-| [CH02_Fig0222(b)(cameraman)](./resources/CH02_Fig0222(b)(cameraman).tif)                                 | Massachusetts Institute of Technology | [MIT.edu](https://MIT.edu)                                                                            |
-| [CH03_Fig0309(a)(washed_out_aerial_image)](./resources/CH03_Fig0309(a)(washed_out_aerial_image).tif)     | NASA                                  | [nasa.gov](https://nasa.gov)                                                                          |
-| [CH03_Fig0326(a)(embedded_square_noisy_512)](./resources/CH03_Fig0326(a)(embedded_square_noisy_512).tif) | -                                     | [imageprocessingplace.com](https://imageprocessingplace.com)                                          |
-| [CH03_Fig0354(a)(einstein_orig)](./resources/CH03_Fig0354(a)(einstein_orig).tif)                         | Public domain                         | -                                                                                                     |
-| [CH06_Fig0638(a)(lenna_RGB)](./resources/CH06_Fig0638(a)(lenna_RGB).tif)                                 | Public domain                         | -                                                                                                     |
-| [CH06_FigP0606(color_bars)](./resources/CH06_FigP0606(color_bars).tif)                                   | -                                     | -                                                                                                     |
-| [horse](./resources/horse.gif)                                                                           | -                                     | -                                                                                                     |
-| [keyboard_1](./resources/keyboard_1.jpg)                                                                 | Amirhossein Heydari                   | [github.com/mr-pylin](https://github.com/mr-pylin)                                                    |
-| [keyboard_2](./resources/keyboard_2.jpg)                                                                 | Amirhossein Heydari                   | [github.com/mr-pylin](https://github.com/mr-pylin)                                                    |
-| [nature_1](./resources/nature_1.jpg)                                                                     | -                                     | [pexels.com](https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/) |
-| [nature_2](./resources/nature_2.jpg)                                                                     | -                                     | [pexels.com](https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/) |
-| [test](./resources/test.tif)                                                                             | Amirhossein Heydari                   | [github.com/mr-pylin](https://github.com/mr-pylin)                                                    |
+| [CH02_Fig0222(b)(cameraman)](./assets/imagesCH02_Fig0222(b)(cameraman).tif)                                 | Massachusetts Institute of Technology | [MIT.edu](https://MIT.edu)                                                                            |
+| [CH03_Fig0309(a)(washed_out_aerial_image)](./assets/imagesCH03_Fig0309(a)(washed_out_aerial_image).tif)     | NASA                                  | [nasa.gov](https://nasa.gov)                                                                          |
+| [CH03_Fig0326(a)(embedded_square_noisy_512)](./assets/imagesCH03_Fig0326(a)(embedded_square_noisy_512).tif) | -                                     | [imageprocessingplace.com](https://imageprocessingplace.com)                                          |
+| [CH03_Fig0354(a)(einstein_orig)](./assets/imagesCH03_Fig0354(a)(einstein_orig).tif)                         | Public domain                         | -                                                                                                     |
+| [CH06_Fig0638(a)(lenna_RGB)](./assets/imagesCH06_Fig0638(a)(lenna_RGB).tif)                                 | Public domain                         | -                                                                                                     |
+| [CH06_FigP0606(color_bars)](./assets/imagesCH06_FigP0606(color_bars).tif)                                   | -                                     | -                                                                                                     |
+| [horse](./assets/imageshorse.gif)                                                                           | -                                     | -                                                                                                     |
+| [keyboard_1](./assets/imageskeyboard_1.jpg)                                                                 | Amirhossein Heydari                   | [github.com/mr-pylin](https://github.com/mr-pylin)                                                    |
+| [keyboard_2](./assets/imageskeyboard_2.jpg)                                                                 | Amirhossein Heydari                   | [github.com/mr-pylin](https://github.com/mr-pylin)                                                    |
+| [nature_1](./assets/imagesnature_1.jpg)                                                                     | -                                     | [pexels.com](https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/) |
+| [nature_2](./assets/imagesnature_2.jpg)                                                                     | -                                     | [pexels.com](https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/) |
+| [test](./assets/imagestest.tif)                                                                             | Amirhossein Heydari                   | [github.com/mr-pylin](https://github.com/mr-pylin)                                                    |
