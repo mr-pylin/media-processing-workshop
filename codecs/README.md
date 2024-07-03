@@ -55,11 +55,11 @@ The latest video compression standard, offering significant efficiency improveme
       - Executable (.exe) files are compiled directly from the latest source code.
       - Link: [drive.google.com/drive/folders/19pNeG4WVZ1w7U_20Dm-4KzNhB_x-5EGv](https://drive.google.com/drive/folders/19pNeG4WVZ1w7U_20Dm-4KzNhB_x-5EGv).
    - 🛠️ Usage
-      - Create a config file or Edit encoder.cfg based on your goal.
       - To Encode:
          ```bash
          ./vvencapp -i input_video.yuv -o encoded_video.266 -s 176x144 --framerate 30 --frames 20 --profile main_10 --level 5.1 --format yuv420 --bitrate 0 --qp 32
          ```
+         ⚠️ Note: for fractional frame rates [e.g. 29.97 fps], replace `--framerate 30` with `--framerate 30000 --framescale 1001` because 29.97 is 30000/1001
       - To Decode:
          ```bash
          ./vvdecapp -b encoded_video.266 -o decoded_video.yuv
