@@ -110,7 +110,8 @@ I look forward to connecting with you!
       - Link: [vcgit.hhi.fraunhofer.de/jvet/HM](https://vcgit.hhi.fraunhofer.de/jvet/HM)
    - **H.266 (VVC) codec**:
       - The latest video compression standard, offering significant efficiency improvements over H.265 for high-resolution streaming and future video applications.
-      - Link: [vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM](https://vcgit.hhi.fraunhofer.de/jvet/VVCSoftware_VTM)
+      - Encoder link: [github.com/fraunhoferhhi/vvenc](https://github.com/fraunhoferhhi/vvenc)
+      - Decoder link: [github.com/fraunhoferhhi/vvdec](https://github.com/fraunhoferhhi/vvdec)
 
 ## 📝 TODO
    - [ ] 04: Adaptive Contrast Enhancement (ACE)
