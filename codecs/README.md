@@ -21,11 +21,11 @@ The most widely used video compression standard, offering high quality at low bi
       - Create a config file or Edit encoder.cfg based on your goal.
       - To Encode:
          ```bash
-         ./lencode.exe -f <encode_config.cfg>
+         ./lencode.exe -f <encoder.cfg>
          ```
       - To Decode:
          ```bash
-         ./ldecode.exe -f <decode_config.cfg>
+         ./ldecode.exe -f <decoder.cfg>
          ```
    - ©️ Source Code
       - Encoder & Decoder: [vcgit.hhi.fraunhofer.de/jvet/JM](https://vcgit.hhi.fraunhofer.de/jvet/JM).
@@ -40,7 +40,7 @@ Successor to H.264, offering even better compression for even higher quality or 
       - Create a config file or Edit encoder.cfg based on your goal.
       - To Encode:
          ```bash
-         ./TAppEncoder.exe -c <encode_config.cfg>
+         ./TAppEncoder.exe -c <encoder_intra_main.cfg>
          ```
       - To Decode:
          ```bash
