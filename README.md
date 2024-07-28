@@ -78,14 +78,19 @@ You can install all dependencies listed in `requirements.txt` using [pip](https:
 ```bash
 pip install -r requirements.txt
 ```
+**Note:** This project was developed using Python `v3.12.3`. If you encounter issues running the dependencies or code, consider using this specific Python version.
 
 ## 🛠️ Usage
-   - Open `.ipynb` files using [Jupyter-notebook](https://jupyter.org/)
-   - Jupyter-notebook is integrated with both [VSCode](https://code.visualstudio.com/) & [Google Colab](https://colab.research.google.com/)
+   - Open the root folder with [VS Code](https://code.visualstudio.com/)
+      - **Windows/Linux**: `Ctrl + K` followed by `Ctrl + O`
+      - **macOS**: `Cmd + K` followed by `Cmd + O`
+   - Open `.ipynb` files using [Jupyter](https://jupyter.org/) extension integrated with VS Code
+   - Allow Visual Studio Code to install any recommended dependencies for working with Jupyter Notebooks.
+   - Jupyter is integrated with both [VS Code](https://code.visualstudio.com/) & [Google Colab](https://colab.research.google.com/)
 
 ## 🔍 Find Me
 Any mistakes, suggestions, or contributions? Feel free to reach out to me at:
-   - 📍[Linktree](https://linktr.ee/mr_pylin)
+   - 📍[linktr.ee/mr_pylin](https://linktr.ee/mr_pylin)
    
 I look forward to connecting with you! 
 
