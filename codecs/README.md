@@ -1,9 +1,29 @@
 # 🎛️ Codecs
-A codec is a software or hardware component that compresses and decompresses digital media files, allowing for efficient storage, transmission, and playback of audio and video content.
+   - A codec is a software or hardware component that compresses and decompresses digital media files.
+   - It allows for efficient storage, transmission, and playback of audio and video content.
 
-## 🎥 Video Codecs
+## 🖼️ **Image Codecs**
 
-### ⚠️ Notes
+### **BPG (Better Portable Graphics)**
+A high-efficiency image format designed to provide better compression and quality than JPEG by using the HEVC (High Efficiency Video Coding) standard
+   - 📥 Download
+      - Executable (.exe) files are officially available at the [official site](https://bellard.org/bpg/).
+      - Link: [bellard.org/bpg/bpg-0.9.8-win64.zip](https://bellard.org/bpg/bpg-0.9.8-win64.zip)
+   - 🛠️ Usage
+      - To Encode:
+         ```bash
+         ./bpgenc.exe <input.[jpg|png]> -o <encoded.bpg> -m 9
+         ```
+      - To Decode:
+         ```bash
+         ./bpgdec.exe -o <decoded.[ppm|png]> <encoded.bpg>
+         ```
+   - ©️ Source Code
+      - Encoder & Decoder: [bellard.org/bpg/libbpg-0.9.8.tar.gz](https://bellard.org/bpg/libbpg-0.9.8.tar.gz).
+
+## 🎥 **Video Codecs**
+
+⚠️ **Notes**
    - YUV files are raw, uncompressed video files that store color information in separate channels: Y (luminance), U (chrominance), and V (chrominance).
    - Using formats other than .yuv for video files may result in incompatibility and corrupted output videos.
    - Use [ffmpeg](https://github.com/BtbN/FFmpeg-Builds) to convert videos to .yuv format:
@@ -11,7 +31,7 @@ A codec is a software or hardware component that compresses and decompresses dig
       ffmpeg -i input.y4m -pix_fmt yuv420p -f rawvideo output.yuv
       ```
 
-### 🎥 H.264 (AVC)
+### **H.264 (AVC)**
 The most widely used video compression standard, offering high quality at low bitrates.
    - 📥 Download
       - Executable (.exe) files are compiled directly from the latest source code (jm19.0).
@@ -30,7 +50,7 @@ The most widely used video compression standard, offering high quality at low bi
    - ©️ Source Code
       - Encoder & Decoder: [vcgit.hhi.fraunhofer.de/jvet/JM](https://vcgit.hhi.fraunhofer.de/jvet/JM).
 
-### 🎥 H.265 (HEVC)
+### **H.265 (HEVC)**
 Successor to H.264, offering even better compression for even higher quality or lower bitrates.
    - 📥 Download
       - Executable (.exe) files are compiled directly from the latest source code.
@@ -49,7 +69,7 @@ Successor to H.264, offering even better compression for even higher quality or 
    - ©️ Source Code
       - Encoder & Decoder: [vcgit.hhi.fraunhofer.de/jvet/HM](https://vcgit.hhi.fraunhofer.de/jvet/HM).
 
-### 🎥 H.266 (VVC)
+### **H.266 (VVC)**
 The latest video compression standard, offering significant efficiency improvements over H.265 for high-resolution streaming and future video applications.
    - 📥 Download
       - Executable (.exe) files are compiled directly from the latest source code.
