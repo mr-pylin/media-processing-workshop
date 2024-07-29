@@ -1,19 +1,24 @@
 import numpy as np
 
-def inner_rotate(img: np.ndarray, degree: float) -> np.ndarray:
+def rotate(img: np.ndarray, degree: float, expand: bool = False) -> np.ndarray:
     # define the rotation angle in radians
     rad = degree / 180 * np.pi
     total_row, total_col = img.shape
     transform_mat = np.array([[np.cos(rad), -np.sin(rad)], [np.sin(rad), np.cos(rad)]])
-
+    
     # determine center of the image
     old_center_idx = total_row // 2, total_col // 2
-    new_r = int(total_row * abs(np.cos(rad)) + total_col * abs(np.sin(rad)))
-    new_c = int(total_row * abs(np.sin(rad)) + total_col * abs(np.cos(rad)))
-    new_center_idx = new_r // 2, new_c // 2
-
-    # initialize the rotated image
-    rotated_image = np.zeros_like(img, shape=(new_r, new_c))
+    
+    if expand:
+        # calculate new image dimensions
+        new_r = int(total_row * abs(np.cos(rad)) + total_col * abs(np.sin(rad)))
+        new_c = int(total_row * abs(np.sin(rad)) + total_col * abs(np.cos(rad)))
+        new_center_idx = new_r // 2, new_c // 2
+        rotated_image = np.zeros((new_r, new_c), dtype=img.dtype)
+    else:
+        new_r, new_c = total_row, total_col
+        new_center_idx = old_center_idx
+        rotated_image = np.zeros_like(img)
     
     # perform rotation
     for row in range(new_r):
@@ -22,29 +27,7 @@ def inner_rotate(img: np.ndarray, degree: float) -> np.ndarray:
             new_row, new_col = (np.matmul(idx, transform_mat) + old_center_idx).astype(int)
             if 0 <= new_row < total_row and 0 <= new_col < total_col:
                 rotated_image[row, col] = img[new_row, new_col]
-
-    return rotated_image
-
-def outer_rotate(img: np.ndarray, degree: float) -> np.ndarray:
-    # define the rotation angle in radians
-    rad = degree / 180 * np.pi
-    total_row, total_col = img.shape
-    transform_mat = np.array([[np.cos(rad), -np.sin(rad)], [np.sin(rad), np.cos(rad)]])
-
-    # determine center of the image
-    center_idx = total_row // 2, total_col // 2
-
-    # initialize the rotated image
-    rotated_image = np.zeros_like(img)
     
-    # perform rotation
-    for row in range(total_row):
-        for col in range(total_col):
-            idx = np.array([row - center_idx[0], col - center_idx[1]])
-            new_row, new_col = (np.matmul(idx, transform_mat) + center_idx).astype(int)
-            if 0 <= new_row < total_row and 0 <= new_col < total_col:
-                rotated_image[row, col] = img[new_row, new_col]
-
     return rotated_image
 
 def nearest_neighbor_interpolation(image: np.ndarray, new_height: int, new_width: int) -> np.ndarray:
