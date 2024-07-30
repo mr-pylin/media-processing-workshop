@@ -31,20 +31,29 @@ def rotate(img: np.ndarray, degree: float, expand: bool = False) -> np.ndarray:
     return rotated_image
 
 def nearest_neighbor_interpolation(image: np.ndarray, new_height: int, new_width: int) -> np.ndarray:
-    # capable of handling rgb images
+
+    # get the height and width of the input image
     height, width = image.shape[:2]
+
+    # initialize the new image with zeros, preserving the number of color channels if present
     new_image = np.zeros((new_height, new_width, *image.shape[2:]))
 
+    # calculate the ratio between old and new dimensions
     x_ratio = width / new_width
     y_ratio = height / new_height
 
+    # loop over the new image dimensions
     for i in range(new_height):
         for j in range(new_width):
+            # find the nearest neighbor in the original image
             x = int(j * x_ratio)
             y = int(i * y_ratio)
+
+            # assign the pixel value from the original image to the new image
             new_image[i, j] = image[y, x]
 
-    return new_image
+    # return the resized image with the same data type as the original image
+    return new_image.astype(image.dtype)
 
 def bilinear_interpolation(image, new_height, new_width):
     # capable of handling rgb images
@@ -66,7 +75,52 @@ def bilinear_interpolation(image, new_height, new_width):
 
             new_image[i, j] = (1 - dx) * (1 - dy) * image[y1, x1] + dx * (1 - dy) * image[y1, x2] + (1 - dx) * dy * image[y2, x1] + dx * dy * image[y2, x2]
 
-    return new_image
+    return new_image.astype(image.dtype)
+
+def fourier_transform_interpolation(image: np.ndarray, new_height: int, new_width: int) -> np.ndarray:
+    old_shape = np.array(image.shape[:2])
+    new_shape = np.array((new_height, new_width))
+
+    # discrete fourier transform
+    fft_image_old_shifted = np.fft.fftshift(np.fft.fft2(image))
+
+    # prepare new shape array with zero padding
+    fft_image_new_shifted = np.zeros(new_shape, dtype=np.complex128)
+
+    # calculate the center of the old and new shapes
+    old_center = old_shape // 2
+    new_center = new_shape // 2
+
+    # calculate the ranges for the new image
+    start_y_new = new_center[0] - old_center[0]
+    end_y_new = start_y_new + old_shape[0]
+    start_x_new = new_center[1] - old_center[1]
+    end_x_new = start_x_new + old_shape[1]
+
+    # calculate the ranges for the old image
+    start_y_old = max(0, old_center[0] - new_center[0])
+    end_y_old = start_y_old + min(new_shape[0], old_shape[0])
+    start_x_old = max(0, old_center[1] - new_center[1])
+    end_x_old = start_x_old + min(new_shape[1], old_shape[1])
+
+    # ensure indices are valid
+    start_y_new = max(0, start_y_new)
+    end_y_new = min(new_shape[0], end_y_new)
+    start_x_new = max(0, start_x_new)
+    end_x_new = min(new_shape[1], end_x_new)
+
+    # copy the transformed data into the new array
+    fft_image_new_shifted[start_y_new:end_y_new, start_x_new:end_x_new] = fft_image_old_shifted[
+        start_y_old:end_y_old, start_x_old:end_x_old
+    ]
+
+    # inverse discrete fourier transform
+    ifft_image_new = np.fft.ifft2(np.fft.ifftshift(fft_image_new_shifted)).real
+
+    # normalize the output
+    new_image = 255 * ((ifft_image_new - ifft_image_new.min()) / (ifft_image_new.max() - ifft_image_new.min()))
+
+    return new_image.astype(np.uint8)
 
 def histogram(img: np.ndarray, rng: int) -> tuple[np.ndarray]:
     assert img.ndim == 2, 'This function can only calculate histogram for 2d images.'
