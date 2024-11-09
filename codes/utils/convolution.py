@@ -3,31 +3,27 @@ import numpy as np
 # a simple function similar to np.pad()
 def pad(signal: np.ndarray, pad_width: int, mode: str = 'fill', fill_value: int = 0):
     """
-    Pad an array.
-    a simple function similar to np.pad()
-
-    Parameters
-    ----------
-    signal : np.ndarray
-        An array
-
-    pad_width : int
-        Width of padding in each side
-
-    mode : {'fill', 'circular', 'symmetric'}, default: 'fill'
-        'fill': normal padding filled with 'fill_value'
-        'circular': circular padding
-        'symmetric': symmetric padding
-
-    fillvalue : int, default: 0
-        Value to fill padding when 'mode' = 'fill'
+    Pad an array with specified padding options.
     
-    Returns
-    -------
-    numpy.ndarray
+    Args:
+        signal (np.ndarray): The input array to be padded.
+        pad_width (int): The width of padding to apply to each side of the array.
+        mode (str, optional): The padding mode. Options are:
+            - 'fill': Pads with `fill_value`.
+            - 'circular': Circular padding where values wrap around.
+            - 'symmetric': Pads symmetrically by mirroring the values at the edges. Defaults to 'fill'.
+        fill_value (int, optional): The value used for padding when `mode` is 'fill'. Defaults to 0.
+    
+    Raises:
+        ValueError: If `mode` is not one of 'fill', 'circular', or 'symmetric'.
+        ValueError: If the number of dimensions in `signal` is not 1D or 2D.
+        
+    Returns:
+        np.ndarray: The padded array with the same shape as `signal` adjusted by `pad_width`.
     """
+    
     output = np.full(shape= [i + 2 * pad_width for i in signal.shape], fill_value= fill_value)
-
+    
     # add signal to the center of the output
     if signal.ndim == 1:
         output[pad_width: signal.shape[0] + pad_width] = signal
@@ -60,7 +56,7 @@ def pad(signal: np.ndarray, pad_width: int, mode: str = 'fill', fill_value: int 
                 # pad the left and right edges
                 output[:, i]      = output[:, 2 * pad_width - i - 1]
                 output[:, -i - 1] = output[:, pad_width + i + 1]
-
+        
         elif mode != 'fill':
             raise ValueError(f"Invalid `mode` value: {mode}; should be 'fill' or 'circular' or 'symmetric'.")
         
@@ -72,38 +68,32 @@ def pad(signal: np.ndarray, pad_width: int, mode: str = 'fill', fill_value: int 
 # a simple function similar to np.convolve()
 def convolve_1d(signal: np.ndarray, filter: np.ndarray, mode: str = 'full', boundary: str = 'fill', fill_value: int = 0, correlation: bool = False) -> np.ndarray:
     """
-    Convolve two 1-dimensional arrays.
-    a simple function similar to np.convolve()
-
-    Parameters
-    ----------
-    signal : np.ndarray
-        An array of length M
-
-    filter : np.ndarray
-        An array of length N
-
-    mode : {'full', 'valid', 'same'}, default: 'full'
-        'full': The output is the full discrete linear convolution of the inputs (size: M+N-1)
-        'valid': The output consists only of those elements that do not rely on the zero-padding (size: M-N+1)
-        'same': The output is the same size as signal (size: M)
-
-    boundary : {'fill', 'circular', 'symmetric'}, default: 'fill'
-        Shape of the filter.
-
-    fill_value : int, default: 0
-        Value to fill padding when 'boundary' = 'fill'
-
-    correlation : bool, default: False
-        To calculate correlation instead of cconvolution
-        
-    Returns
-    -------
-    numpy.ndarray
+    Convolve two 1-dimensional arrays with options for boundary handling and mode.
+    
+    Args:
+        signal (np.ndarray): The input array (of length M) to be convolved.
+        filter (np.ndarray): The filter array (of length N) to be applied on the signal.
+        mode (str, optional): The convolution mode. Options are:
+            - 'full': Returns the full discrete linear convolution (size: M+N-1).
+            - 'valid': Returns only the elements that do not rely on zero-padding (size: M-N+1).
+            - 'same': Returns the same size as the signal (size: M). Defaults to 'full'.
+        boundary (str, optional): The boundary handling mode. Options are:
+            - 'fill': Pads with `fill_value`.
+            - 'circular': Circular padding where values wrap around.
+            - 'symmetric': Pads symmetrically by mirroring the values at the edges. Defaults to 'fill'.
+        fill_value (int, optional): The value used for padding when `boundary` is 'fill'. Defaults to 0.
+        correlation (bool, optional): If `True`, computes the cross-correlation instead of convolution. Defaults to False.
+    
+    Raises:
+        ValueError: If `mode` is not one of 'full', 'valid', or 'same'.
+        AssertionError: If `signal` or `filter` is not a 1D array.
+    
+    Returns:
+        np.ndarray: The result of the convolution or correlation operation.
     """
-
+    
     assert signal.ndim == 1 and filter.ndim == 1, "signal & filter must be 1D arrays"
-
+    
     # mode
     if mode == 'full':
         pad_width = filter.shape[0] - 1
@@ -116,57 +106,51 @@ def convolve_1d(signal: np.ndarray, filter: np.ndarray, mode: str = 'full', boun
         output_length = signal.shape[0]
     else:
         raise ValueError(f"Invalid `mode` value: {mode}; should be 'fill' or 'circular' or 'symmetric'.")
-
+    
     # padding signal if needed
     padded_signal = pad(signal, pad_width= pad_width, mode= boundary, fill_value= fill_value)
-
+    
     # reverse of filter
     if not correlation:
         filter_reversed = filter[::-1]
-
+    
     # convolution
     output = np.empty(shape= output_length)
-
+    
     for i in range(output_length):
         output[i] = np.dot(padded_signal[i: i + filter.shape[0]], filter_reversed)
-
+    
     return output
 
 # a simple function similar to scipy.signal.convolve2d
 def convolve_2d(signal: np.ndarray, filter: np.ndarray, mode: str = 'full', boundary: str = 'fill', fill_value: int = 0, correlation: bool = False) -> np.ndarray:
     """
-    Convolve two 2-dimensional arrays.
-    a simple function similar to scipy.signal.convolve2d
-
-    Parameters
-    ----------
-    signal : np.ndarray
-        An array of length M
-
-    filter : np.ndarray
-        An array of length N
-
-    mode : {'full', 'valid', 'same'}, default: 'full'
-        'full': The output is the full discrete linear convolution of the inputs (size: M+N-1)
-        'valid': The output consists only of those elements that do not rely on the zero-padding (size: M-N+1)
-        'same': The output is the same size as signal (size: M)
-
-    boundary : {'fill', 'circular', 'symmetric'}, default: 'fill'
-        Shape of the filter.
-
-    fill_value : int, default: 0
-        Value to fill padding when 'boundary' = 'fill'
-
-    correlation : bool, default: False
-        To calculate correlation instead of cconvolution
-
-    Returns
-    -------
-    numpy.ndarray
+    Convolve two 2-dimensional arrays with options for boundary handling and mode.
+    
+    Args:
+        signal (np.ndarray): The input 2D array to be convolved.
+        filter (np.ndarray): The filter 2D array to be applied on the signal.
+        mode (str, optional): The convolution mode. Options are:
+            - 'full': Returns the full discrete linear convolution (size: M+N-1).
+            - 'valid': Returns only the elements that do not rely on zero-padding (size: M-N+1).
+            - 'same': Returns the same size as the signal (size: M). Defaults to 'full'.
+        boundary (str, optional): The boundary handling mode. Options are:
+            - 'fill': Pads with `fill_value`.
+            - 'circular': Circular padding where values wrap around.
+            - 'symmetric': Pads symmetrically by mirroring the values at the edges. Defaults to 'fill'.
+        fill_value (int, optional): The value used for padding when `boundary` is 'fill'. Defaults to 0.
+        correlation (bool, optional): If `True`, computes the cross-correlation instead of convolution. Defaults to False.
+    
+    Raises:
+        ValueError: If `mode` is not one of 'full', 'valid', or 'same'.
+        AssertionError: If `signal` or `filter` is not a 2D array.
+    
+    Returns:
+        np.ndarray: The result of the convolution or correlation operation.
     """
-
+    
     assert signal.ndim == 2 and filter.ndim == 2, "signal & filter must be 2D arrays"
-
+    
     # mode
     if mode == 'full':
         pad_width = filter.shape[0] - 1
@@ -179,39 +163,39 @@ def convolve_2d(signal: np.ndarray, filter: np.ndarray, mode: str = 'full', boun
         output_length = signal.shape
     else:
         raise ValueError(f"Invalid `mode` value: {mode}; should be 'fill' or 'circular' or 'symmetric'.")
-
+    
     # padding signal if needed
     padded_signal = pad(signal, pad_width= pad_width, mode= boundary, fill_value= fill_value)
-
+    
     # reverse of filter
     if not correlation:
         filter_reversed = np.flip(np.flip(filter, axis= 1), axis= 0)
-
+    
     # convolution
     output = np.empty(shape= output_length)
-
+    
     for row in range(output_length[0]):
         for col in range(output_length[1]):
             output[row, col] = np.multiply(padded_signal[row: row + filter.shape[0], col: col + filter.shape[1]], filter_reversed).sum()
-
+    
     return output
 
-if __name__ == '__main__':
-    from scipy.signal import convolve2d
 
+if __name__ == '__main__':
+    
     arr1 = np.arange(5)
     filter_1 = np.array([1, 2, 3])
-
+    
     arr2 = np.arange(25).reshape(5, 5)
     filter_2 = np.arange(9).reshape(3, 3)
-
+    
     print(pad(signal= arr1, pad_width= 2, mode= 'fill', fill_value= 2))
     print(pad(signal= arr1, pad_width= 2, mode= 'circular'))
     print(pad(signal= arr1, pad_width= 2, mode= 'symmetric'))
-
+    
     print(pad(signal= arr2, pad_width= 2, mode= 'fill', fill_value= 0))
     print(pad(signal= arr2, pad_width= 2, mode= 'circular'))
     print(pad(signal= arr2, pad_width= 2, mode= 'symmetric'))
-
+    
     print(convolve_1d(arr1, filter_1, mode= 'same', boundary= 'fill', fill_value= 0))
     print(convolve_2d(arr2, filter_2, mode= 'valid', boundary= 'fill', fill_value= 0))
