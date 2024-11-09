@@ -2,25 +2,26 @@
 Implementation of various concepts around Digital Media (Image/Video) Processing (DMP) topics.
 
 ## 📖 Table of Contents
-0.  [**Introduction**](./codes/00_introduction.ipynb)  
+### Main Notebooks
+   1. [**Introduction**](./codes/01_introduction.ipynb)  
    How to read/plot an image using [matplotlib](https://matplotlib.org/) package   
    Image properties: color, dtype, depth, resolution, ...
-0.  [**Basic Modifications**](./codes/01_basic-modification.ipynb)  
+   1. [**Basic Modifications**](./codes/02_basic-modification.ipynb)  
    Crop, Flip, Circular Shift, Rotation
-0.  [**Interpolations**](./codes/02_interpolations.ipynb)  
+   1. [**Interpolations**](./codes/03_interpolations.ipynb)  
    Nearest Neighbor, BiLinear, BiCubic, Lanczos interpolation
-0.  [**Intensity Transformation**](./codes/03_intensity-transformation.ipynb)  
+   1. [**Intensity Transformation**](./codes/04_intensity-transformation.ipynb)  
    Negative, Logarithm, Power-Law (Gamma correction), Piecewise-Linear Transform
-0.  [**Histogram**](./codes/04_histogram.ipynb)  
+   1. [**Histogram**](./codes/05_histogram.ipynb)  
    Histogram Stretching, Shrinking, Sliding  
    Global Histogram Equalization  
    Local Histogram Equalization (Adaptive Histogram Equalization)  
    Adaptive Contrast Enhancement (ACE)  
    Histogram Matching (Specification)  
-0.  [**Convolution**](./codes/05_convolution.ipynb)  
+   1. [**Convolution**](./codes/06_convolution.ipynb)  
    1D Convolution  
    2D Convolution (GrayScale/RGB image)  
-0.  [**Fourier Transform**](./codes/06_fourier-transform.ipynb)  
+   1. [**Fourier Transform**](./codes/07_fourier-transform.ipynb)  
    Basis vectors(1D)/images(2D)  
    Forward/Backward Fourier Transform    
    Fast Fourier Transform (FFT)  
@@ -30,12 +31,12 @@ Implementation of various concepts around Digital Media (Image/Video) Processing
    Shift, Rotation, Flip effect in frequency domain  
    Image sharpening using a gaussian high-pass filter  
    Periodic noise removal  
-0.  [**Cosine Transform**](./codes/07_cosine-transform.ipynb)  
+   1. [**Cosine Transform**](./codes/08_cosine-transform.ipynb)  
    Basis vectors(1D)/images(2D)  
    Forward/Backward Cosine Transform  
    Compression Effect (DFT vs DCT)  
    Zonal Masking  
-0.  [**Quality Assessment**](./codes/08_quality-assessment.ipynb)  
+   1. [**Quality Assessment**](./codes/09_quality-assessment.ipynb)  
    Mean Squared Error (MSE)  
    Signal-to-Noise Ratio (SNR)  
    Peak Signal-to-Noise Ratio (PSNR)  
@@ -46,18 +47,39 @@ Implementation of various concepts around Digital Media (Image/Video) Processing
    Visual Information Fidelity (VIF)  
    Feature Similarity Index (FSIM)  
    Multi-Scale Structural Similarity Index (MS-SSIM)  
-0.  [**Steganography**](./codes/09_least-significant-bit-steganography.ipynb)  
+   1. [**Steganography**](./codes/10_least-significant-bit-steganography.ipynb)  
    Steganography using least significant bits
-0. [**JPEG codec**](./codes/10_jpeg-codec.ipynb)  
+   1. [**JPEG codec**](./codes/11_jpeg-codec.ipynb)  
    JPEG Encoder & Decoder
-0. [**MPEG codec**](./codes/11_mpeg-codec.ipynb)  
+   1. [**MPEG codec**](./codes/12_mpeg-codec.ipynb)  
    MPEG Encoder & Decoder
-0. [**Image Registration**](./codes/12_image-registration.ipynb)  
+   1. [**Image Registration**](./codes/13_image-registration.ipynb)  
    Aligning multiple images into a common coordinate system
-0. [**Image Stitching**](./codes/13_image-stitching.ipynb)  
+   1. [**Image Stitching**](./codes/14_image-stitching.ipynb)  
    Combining multiple images to create a single larger image [Panorama]
-0. [**Optical Flow**](./codes/14_optical-flow.ipynb)  
+   1. [**Optical Flow**](./codes/15_optical-flow.ipynb)  
    Optical Flow using Lucas-Kanade & Farneback algorithms
+
+### Utilities
+Implementation of several concepts utilized in the main notebooks
+   - [**Padding and Convolution**](./codes/utils/convolution.py)  
+   Provides utility functions for 1D and 2D convolution, along with flexible padding options.
+   - [**DCT Implementation**](./codes/utils/dct.py)  
+   Discrete Cosine Transform (DCT) implementation for 1D and 2D signals.
+   - [**DFT Implementation**](./codes/utils/dft.py)  
+   Implementations of 1D and 2D Discrete Fourier Transform (DFT) and related functions.
+   - [**Filter Functions Implementation**](./codes/utils/filters.py)  
+   Implementations of various 2D filter functions including ideal, Gaussian, sinc, Butterworth, Chebyshev, Bessel, and block masks.
+   - [**JPEG Codec Implementation**](./codes/utils/jpeg.py)  
+   Class-based implementation of JPEG encoder and decoder using discrete cosine transform (DCT) and quantization.
+   - [**MPEG Codec Implementation**](./codes/utils/mpeg.py)  
+   Class-based implementation of MPEG encoder and decoder using discrete cosine transform (DCT) and quantization.
+   - [**Quality Assessment Metrics**](./codes/utils/quality_assessment.py)  
+   Implementation of famous metrics e.g. MSE, SNR, PSNR, SSIM, RMSE, MAE, ... 
+   - [**Spatial Modifications**](./codes/utils/spatial_modification.py)  
+   Implementation of concepts in spatial domain e.g. interpolations and histograms
+   - [**Steganography**](./codes/utils/steganography.py)  
+   Implementation of a simple steganography method using Least Significant Bits (LSB)
 
 ## 📋 Prerequisites
    - **Programming Fundamentals**
