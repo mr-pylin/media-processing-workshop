@@ -38,12 +38,17 @@ class JPEG:
             scale (int, optional): Scaling factor for the quantization table. Defaults to 1.
         
         Raises:
-            AssertionError: If the input image is not grayscale or RGB, or if its dimensions are not multiples of the block size.
+            ValueError: If the input image is not grayscale or RGB, or if its dimensions are not multiples of the block size.
+            ValueError: If video height/width is not divisible by block size.
         """
         
-        assert len(image.shape) in [2, 3], f"only GrayScale/RGB image is supported. current image has shape: {image.shape}"
-        if image.ndim == 3:
-            assert image.shape[2] == 3, f"the depth of the image should be 3. current depth is: {image.shape[2]}"
+        # check that the image is either grayscale (2D) or RGB (3D with depth 3)
+        if len(image.shape) not in [2, 3]:
+            raise ValueError(f"Only grayscale or RGB images are supported. Current image has shape: {image.shape}")
+        
+        # if the image is 3D, verify that it has a depth of 3 (i.e., an RGB image)
+        if image.ndim == 3 and image.shape[2] != 3:
+            raise ValueError(f"The depth of the image should be 3 for an RGB image. Current depth is: {image.shape[2]}")
         
         self.image = image
         self.scale = scale
@@ -55,8 +60,13 @@ class JPEG:
         else:
             self.depth = 1
         
-        assert self.height % self.block_size == 0, f"video height {self.height} is not divisible to {self.block_size}"
-        assert self.width % self.block_size == 0, f"video width {self.width} is not divisible to {self.block_size}"
+        # check if height is divisible by block_size
+        if self.height % self.block_size != 0:
+            raise ValueError(f"Video height {self.height} is not divisible by block size {self.block_size}")
+        
+        # check if width is divisible by block_size
+        if self.width % self.block_size != 0:
+            raise ValueError(f"Video width {self.width} is not divisible by block size {self.block_size}")
         
         self.num_row_blocks = self.height // self.block_size
         self.num_col_blocks = self.width // self.block_size

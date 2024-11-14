@@ -1,5 +1,4 @@
 import numpy as np
-from typing import Sequence
 
 # create basis vectors [1-dimensional]
 def cosine_basis_1d(N: int) -> np.ndarray:
@@ -45,12 +44,12 @@ def cosine_basis_2d(N: int) -> np.ndarray:
     return basis_images
 
 # discrete Cosine Transform [1-dimensional]
-def dct(signal: Sequence) -> np.ndarray:
+def dct(signal: np.ndarray) -> np.ndarray:
     """
     Perform a discrete cosine transform (DCT) on a 1D signal.
     
     Args:
-        signal (Sequence): The 1D input signal to be transformed.
+        signal (np.ndarray): The 1D input signal to be transformed.
     
     Returns:
         np.ndarray: The frequency domain representation of the signal after DCT.
@@ -68,12 +67,12 @@ def dct(signal: Sequence) -> np.ndarray:
 
 # inverse discrete Cosine Transform [1-dimensional]
 # in Cosine, backward-transform is just the transposed version of forward-transform
-def idct(signal: Sequence) -> np.ndarray:
+def idct(signal: np.ndarray) -> np.ndarray:
     """
     Perform an inverse discrete cosine transform (IDCT) on a 1D signal.
     
     Args:
-        signal (Sequence): The 1D frequency domain signal to be transformed.
+        signal (np.ndarray): The 1D frequency domain signal to be transformed.
     
     Returns:
         np.ndarray: The spatial domain representation of the signal after IDCT.
@@ -91,22 +90,27 @@ def idct(signal: Sequence) -> np.ndarray:
     return spatial_domain
 
 # discrete Cosine Transform [2-dimensional]
-def dct2(signal: Sequence) -> np.ndarray:
+def dct2(signal: np.ndarray) -> np.ndarray:
     """
     Perform a 2D discrete cosine transform (DCT) on a squared image.
     
     Args:
-        signal (Sequence): The 2D input signal (image) to be transformed.
+        signal (np.ndarray): The 2D input signal (image) to be transformed.
     
     Raises:
-        AssertionError: If the input signal is not a square image.
+        ValueError: If the input signal is not 2-dimensional.
+        ValueError: If the input signal is not a square image.
     
     Returns:
         np.ndarray: The 2D frequency domain representation of the image after DCT.
     """
     
+    if signal.ndim != 2:
+        raise ValueError("This function only accepts 2D signals")
+    
     M, N = signal.shape
-    assert M == N, "This function can only handle squared images"
+    if M != N:
+        raise ValueError("This function can only handle squared signals")
     
     basis_images = cosine_basis_2d(M)
     
@@ -125,22 +129,27 @@ def dct2(signal: Sequence) -> np.ndarray:
     return frequency_domain
 
 # inverse discrete Cosine Transform [2-dimensional]
-def idct2(signal: Sequence):
+def idct2(signal: np.ndarray) -> np.ndarray:
     """
     Perform an inverse 2D discrete cosine transform (IDCT) on a squared image.
     
     Args:
-        signal (Sequence): The 2D frequency domain signal (image) to be transformed.
+        signal (np.ndarray): The 2D frequency domain signal (image) to be transformed.
     
     Raises:
-        AssertionError: If the input signal is not a square image.
+        ValueError: If the input signal is not 2-dimensional.
+        ValueError: If the input signal is not a square image.
     
     Returns:
         np.ndarray: The 2D spatial domain representation of the image after IDCT.
     """
     
+    if signal.ndim != 2:
+        raise ValueError("This function only accepts 2D signals")
+    
     M, N = signal.shape
-    assert M == N, "This function can only handle squared images"
+    if M != N:
+        raise ValueError("This function can only handle squared signals")
     
     basis_images = np.transpose(cosine_basis_2d(M))
     

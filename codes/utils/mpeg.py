@@ -45,7 +45,9 @@ class MPEG:
             None
         """
         
-        assert len(video.shape) == 4, f"only RGB video is supported. current video has shape: {video.shape}"
+        # check if the video has a 4D shape, typically [frames, height, width, channels] for RGB videos
+        if len(video.shape) != 4:
+            raise ValueError(f"Only RGB video is supported. Current video has shape: {video.shape}")
         
         self.actual_frames = video
         self.reconstructed_frames = np.zeros_like(video)
@@ -56,8 +58,14 @@ class MPEG:
         self.block_size = 8
         
         self.frames, self.height, self.width, self.depth = video.shape
-        assert self.height % self.macroblock_size == 0, f"video height {self.height} is not divisible to {self.macroblock_size}"
-        assert self.width % self.macroblock_size == 0, f"video width {self.width} is not divisible to {self.macroblock_size}"
+        
+        # check if the video height is divisible by macroblock_size
+        if self.height % self.macroblock_size != 0:
+            raise ValueError(f"Video height {self.height} is not divisible by macroblock size {self.macroblock_size}")
+        
+        # check if the video width is divisible by macroblock_size
+        if self.width % self.macroblock_size != 0:
+            raise ValueError(f"Video width {self.width} is not divisible by macroblock size {self.macroblock_size}")
         
         self.num_row_blocks = self.height // self.block_size
         self.num_col_blocks = self.width // self.block_size

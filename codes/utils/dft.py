@@ -1,5 +1,4 @@
 import numpy as np
-from typing import Sequence
 
 # create basis vectors [1-dimensional]
 def fourier_basis_1d(N: int) -> np.ndarray:
@@ -51,11 +50,11 @@ def fourier_basis_2d(N: int):
     return basis_images
 
 # discrete Fourier Transform [1-dimensional]
-def dft(signal: Sequence, norm: str = 'backward'):
+def dft(signal: np.ndarray, norm: str = 'backward'):
     """Perform the Discrete Fourier Transform (DFT) on a 1D signal.
     
     Args:
-        signal (Sequence): The input signal to transform.
+        signal (np.ndarray): The input signal to transform.
         norm (str, optional): The normalization method. Defaults to 'backward'.
             - 'forward': Scales the result by 1/N.
             - 'ortho': Scales the result by sqrt(1/N).
@@ -84,11 +83,11 @@ def dft(signal: Sequence, norm: str = 'backward'):
 
 # inverse discrete Fourier Transform [1-dimensional]
 # in fourier, backward-transform is just the conjugate transposed version of forward-transform
-def idft(signal: Sequence, norm: str = 'backward'):
+def idft(signal: np.ndarray, norm: str = 'backward'):
     """Perform the Inverse Discrete Fourier Transform (IDFT) on a 1D signal.
     
     Args:
-        signal (Sequence): The Fourier-transformed signal in the frequency domain.
+        signal (np.ndarray): The Fourier-transformed signal in the frequency domain.
         norm (str, optional): The normalization method. Defaults to 'backward'.
             - 'forward': Scales the result by 1/N.
             - 'ortho': Scales the result by sqrt(1/N).
@@ -116,25 +115,31 @@ def idft(signal: Sequence, norm: str = 'backward'):
     return spatial_domain
 
 # discrete Fourier Transform [2-dimensional]
-def dft2(signal: Sequence, norm: str = 'backward') -> np.ndarray:
+def dft2(signal: np.ndarray, norm: str = 'backward') -> np.ndarray:
     """Perform the 2D Discrete Fourier Transform (DFT) on a signal.
     
     Args:
-        signal (Sequence): The 2D input signal (square image).
+        signal (np.ndarray): The 2D input signal (square image).
         norm (str, optional): The normalization method. Defaults to 'backward'.
             - 'forward': Scales the result by 1/(N*M).
             - 'ortho': Scales the result by sqrt(1/(N*M)).
             - 'backward': No scaling (default).
     
     Raises:
-        ValueError: If the input signal is not square or an invalid `norm` value is provided.
+        ValueError: If the input signal is not 2-dimensional.
+        ValueError: If the input signal is not a square image.
+        ValueError: If an invalid `norm` value is provided.
     
     Returns:
         np.ndarray: The 2D Fourier-transformed signal in the frequency domain.
     """
     
+    if signal.ndim != 2:
+        raise ValueError("This function only accepts 2D signals")
+    
     M, N = signal.shape
-    assert M == N, "This function can only handle squared images"
+    if M != N:
+        raise ValueError("This function can only handle squared signals")
     
     basis_images = fourier_basis_2d(M)
     
@@ -157,25 +162,31 @@ def dft2(signal: Sequence, norm: str = 'backward') -> np.ndarray:
     return frequency_domain
 
 # inverse discrete Fourier Transform [2-dimensional]
-def idft2(signal: Sequence, norm: str = 'backward'):
+def idft2(signal: np.ndarray, norm: str = 'backward') -> np.ndarray:
     """Perform the 2D Inverse Discrete Fourier Transform (IDFT) on a signal.
     
     Args:
-        signal (Sequence): The 2D Fourier-transformed signal in the frequency domain.
+        signal (np.ndarray): The 2D Fourier-transformed signal in the frequency domain.
         norm (str, optional): The normalization method. Defaults to 'backward'.
             - 'forward': Scales the result by 1/(N*M).
             - 'ortho': Scales the result by sqrt(1/(N*M)).
             - 'backward': No scaling (default).
     
     Raises:
-        ValueError: If the input signal is not square or an invalid `norm` value is provided.
+        ValueError: If the input signal is not 2-dimensional.
+        ValueError: If the input signal is not a square image.
+        ValueError: If an invalid `norm` value is provided.
     
     Returns:
         np.ndarray: The inverse 2D Fourier-transformed signal in the spatial domain.
     """
     
+    if signal.ndim != 2:
+        raise ValueError("This function only accepts 2D signals")
+    
     M, N = signal.shape
-    assert M == N, "This function can only handle squared images"
+    if M != N:
+        raise ValueError("This function can only handle squared signals")
     
     basis_images = np.conjugate(fourier_basis_2d(M))
     

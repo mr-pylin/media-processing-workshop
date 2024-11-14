@@ -181,10 +181,11 @@ def histogram(img: np.ndarray, rng: int) -> tuple[np.ndarray]:
         tuple[np.ndarray]: Histogram of the input image.
     
     Raises:
-        AssertionError: If the input image is not 2D.
+        ValueError: If the input image is not 2D.
     """
     
-    assert img.ndim == 2, 'This function can only calculate histogram for 2d images.'
+    if img.ndim != 2:
+        raise ValueError("This function can only calculate histogram for 2d images.")
     
     idx, counts = np.unique(img, return_counts= True)
     hist = np.zeros(shape= rng, dtype= np.int64)

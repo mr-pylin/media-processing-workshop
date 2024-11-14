@@ -85,14 +85,20 @@ def convolve_1d(signal: np.ndarray, filter: np.ndarray, mode: str = 'full', boun
         correlation (bool, optional): If `True`, computes the cross-correlation instead of convolution. Defaults to False.
     
     Raises:
+        ValueError: If `signal` or `filter` is not a 1D array.
         ValueError: If `mode` is not one of 'full', 'valid', or 'same'.
-        AssertionError: If `signal` or `filter` is not a 1D array.
     
     Returns:
         np.ndarray: The result of the convolution or correlation operation.
     """
     
-    assert signal.ndim == 1 and filter.ndim == 1, "signal & filter must be 1D arrays"
+    # check if signal is 1D or raise an error
+    if signal.ndim != 1:
+        raise ValueError("Expected 'signal' to be 1-dimensional")
+    
+    # check if filter is 1D or raise an error
+    if filter.ndim != 1:
+        raise ValueError("Expected 'filter' to be 1-dimensional")
     
     # mode
     if mode == 'full':
@@ -142,14 +148,20 @@ def convolve_2d(signal: np.ndarray, filter: np.ndarray, mode: str = 'full', boun
         correlation (bool, optional): If `True`, computes the cross-correlation instead of convolution. Defaults to False.
     
     Raises:
+        ValueError: If `signal` or `filter` is not a 2D array.
         ValueError: If `mode` is not one of 'full', 'valid', or 'same'.
-        AssertionError: If `signal` or `filter` is not a 2D array.
     
     Returns:
         np.ndarray: The result of the convolution or correlation operation.
     """
     
-    assert signal.ndim == 2 and filter.ndim == 2, "signal & filter must be 2D arrays"
+    # check if signal is 2D or raise an error
+    if signal.ndim != 2:
+        raise ValueError("Expected 'signal' to be 2-dimensional")
+    
+    # check if filter is 2D or raise an error
+    if filter.ndim != 2:
+        raise ValueError("Expected 'filter' to be 2-dimensional")
     
     # mode
     if mode == 'full':

@@ -33,14 +33,19 @@ class Steganography:
             tuple[int, np.ndarray]: Tuple containing the length of the binary message and the modified image.
         
         Raises:
-            AssertionError: If the number of lowest bits exceeds the image's bit depth or if the message is too large for the given combination of image and n_lowest_bits.
+            ValueError: If the number of lowest bits exceeds the image's bit depth or if the message is too large for the given combination of image and n_lowest_bits.
         """
         
         image_bpp = np.iinfo(image.dtype).bits
         depth = 1 if image.ndim == 2 else len(image[0, 0])
         
-        assert image_bpp >= self.n_lowest_bits, f"n_lowest_bits:{self.n_lowest_bits} should be lower or equal to the image's bit per pixel:{image_bpp}"
-        assert image.shape[0] * image.shape[1] * depth * self.n_lowest_bits >= len(message) * image_bpp, f"message is too big for this combination of image & n_lowest_bits:{self.n_lowest_bits} & encoding:{self.encoding}"
+        # check that `n_lowest_bits` is valid for the image's bit depth
+        if image_bpp < self.n_lowest_bits:
+            raise ValueError(f"n_lowest_bits:{self.n_lowest_bits} should be lower or equal to the image's bits per pixel:{image_bpp}")
+        
+        # check that the image has enough capacity for the message
+        if image.shape[0] * image.shape[1] * depth * self.n_lowest_bits < len(message) * image_bpp:
+            raise ValueError(f"message is too big for this combination of image & n_lowest_bits:{self.n_lowest_bits} & encoding:{self.encoding}")
         
         mask = 2 ** image_bpp - 2 ** self.n_lowest_bits
         binary_message = ''.join(format(ord(char), '08b') for char in message)
@@ -72,14 +77,19 @@ class Steganography:
             str: Decoded message.
         
         Raises:
-            AssertionError: If the number of lowest bits exceeds the image's bit depth or if the message length is too large for the given combination of image and n_lowest_bits.
+            ValueError: If the number of lowest bits exceeds the image's bit depth or if the message length is too large for the given combination of image and n_lowest_bits.
         """
         
         image_bpp = np.iinfo(image.dtype).bits
         depth = 1 if image.ndim == 2 else len(image[0, 0])
         
-        assert image_bpp >= self.n_lowest_bits, f"n_lowest_bits:{self.n_lowest_bits} should be lower or equal to the image's bit per pixel:{image_bpp}"
-        assert image.shape[0] * image.shape[1] * depth *self.n_lowest_bits >= length, f"message is too big for this combination of image & n_lowest_bits:{self.n_lowest_bits} & encoding:{self.encoding}"
+        # check that `n_lowest_bits` is valid for the image's bit depth
+        if image_bpp < self.n_lowest_bits:
+            raise ValueError(f"n_lowest_bits:{self.n_lowest_bits} should be lower or equal to the image's bit per pixel:{image_bpp}")
+        
+        # check that the image has enough capacity for the message
+        if image.shape[0] * image.shape[1] * depth *self.n_lowest_bits < length:
+            raise ValueError(f"message is too big for this combination of image & n_lowest_bits:{self.n_lowest_bits} & encoding:{self.encoding}")
         
         chunks = []
         image_flat = image.flatten()
