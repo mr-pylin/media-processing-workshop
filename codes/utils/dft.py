@@ -25,7 +25,7 @@ def fourier_basis_1d(N: int) -> np.ndarray:
     return basis_vectors
 
 # create basis images [2-dimensional] using <fourier_basis_1d>
-def fourier_basis_2d(N: int):
+def fourier_basis_2d(N: int) -> np.ndarray:
     """Generate 2D Fourier basis images.
     
     Args:
@@ -50,7 +50,7 @@ def fourier_basis_2d(N: int):
     return basis_images
 
 # discrete Fourier Transform [1-dimensional]
-def dft(signal: np.ndarray, norm: str = 'backward'):
+def dft(signal: np.ndarray, norm: str = 'backward') -> np.ndarray:
     """Perform the Discrete Fourier Transform (DFT) on a 1D signal.
     
     Args:
@@ -83,7 +83,7 @@ def dft(signal: np.ndarray, norm: str = 'backward'):
 
 # inverse discrete Fourier Transform [1-dimensional]
 # in fourier, backward-transform is just the conjugate transposed version of forward-transform
-def idft(signal: np.ndarray, norm: str = 'backward'):
+def idft(signal: np.ndarray, norm: str = 'backward') -> np.ndarray:
     """Perform the Inverse Discrete Fourier Transform (IDFT) on a 1D signal.
     
     Args:
@@ -209,7 +209,7 @@ def idft2(signal: np.ndarray, norm: str = 'backward') -> np.ndarray:
     return spatial_domain
 
 # fftshift : shift low-frequencies to the center
-def fftshift(arr):
+def fftshift(arr: np.ndarray) -> np.ndarray:
     """Shift low-frequency components to the center of the array.
     
     Args:
@@ -231,7 +231,7 @@ def fftshift(arr):
     return shifted_arr
 
 # ifftshift : shift low-frequencies to the corners
-def ifftshift(arr):
+def ifftshift(arr: np.ndarray) -> np.ndarray:
     """Shift low-frequency components back to the corners of the array.
     
     Args:

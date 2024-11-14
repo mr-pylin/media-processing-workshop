@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 
-def mse(image1, image2):
+def mse(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Mean Squared Error (MSE) between two images.
     
@@ -17,7 +17,7 @@ def mse(image1, image2):
     return np.mean((image1 - image2) ** 2)
 
 
-def snr(image1, image2):
+def snr(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Signal-to-Noise Ratio (SNR) between two images.
     
@@ -34,7 +34,7 @@ def snr(image1, image2):
     return 10 * np.log10(signal / noise)
 
 
-def psnr(image1, image2):
+def psnr(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Peak Signal-to-Noise Ratio (PSNR) between two images.
     
@@ -50,7 +50,7 @@ def psnr(image1, image2):
     return 10 * np.log10((max_val ** 2) / mse(image1, image2))
 
 
-def ssim_map(image1, image2, K1=0.01, K2=0.03, L=255):
+def ssim_map(image1: np.ndarray, image2: np.ndarray, K1: float = 0.01, K2: float = 0.03, L: int = 255) -> np.ndarray:
     """
     Calculate the Structural Similarity Index Map (SSIM) between two images.
     
@@ -79,7 +79,7 @@ def ssim_map(image1, image2, K1=0.01, K2=0.03, L=255):
     return ssim_map
 
 
-def ssim(image1, image2, K1=0.01, K2=0.03, L=255):
+def ssim(image1: np.ndarray, image2: np.ndarray, K1: float = 0.01, K2: float = 0.03, L: int = 255) -> float:
     """
     Calculate the Structural Similarity Index (SSIM) between two images.
     
@@ -98,7 +98,7 @@ def ssim(image1, image2, K1=0.01, K2=0.03, L=255):
     return np.mean(ssim_map_val)
 
 
-def rmse(image1, image2):
+def rmse(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Root Mean Square Error (RMSE) between two images.
     
@@ -113,7 +113,7 @@ def rmse(image1, image2):
     return np.sqrt(np.mean((image1 - image2) ** 2))
 
 
-def mae(image1, image2):
+def mae(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Mean Absolute Error (MAE) between two images.
     
@@ -128,7 +128,7 @@ def mae(image1, image2):
     return np.mean(np.abs(image1 - image2))
 
 
-def mssim(image1, image2):  
+def mssim(image1: np.ndarray, image2: np.ndarray) -> float:  
     """
     Calculate the Multi-Scale Structural Similarity Index (MSSIM) between two images.
     
@@ -157,7 +157,7 @@ def mssim(image1, image2):
     return np.mean(mssim)
 
 
-def vif(image1, image2):
+def vif(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Visual Information Fidelity (VIF) between two images.
     
@@ -173,7 +173,7 @@ def vif(image1, image2):
     return np.sum((image1 * image2 + sigma_nsq) / (image1 ** 2 + image2 ** 2 + sigma_nsq))
 
 
-def fsim(image1, image2):
+def fsim(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Feature Similarity Index (FSIM) between two images.
     
@@ -188,7 +188,7 @@ def fsim(image1, image2):
     return np.sum((2 * image1 * image2 + 0.01) / (image1 ** 2 + image2 ** 2 + 0.01))
 
 
-def ms_ssim(image1, image2):
+def ms_ssim(image1: np.ndarray, image2: np.ndarray) -> float:
     """
     Calculate the Multi-Scale Structural Similarity Index (MS-SSIM) between two images.
     

@@ -78,7 +78,7 @@ def nearest_neighbor_interpolation(image: np.ndarray, new_height: int, new_width
     # return the resized image with the same data type as the original image
     return new_image.astype(image.dtype)
 
-def bilinear_interpolation(image, new_height, new_width):
+def bilinear_interpolation(image: np.ndarray, new_height: int, new_width: int) -> np.ndarray:
     """
     Resize an image using bilinear interpolation.
     
@@ -193,7 +193,7 @@ def histogram(img: np.ndarray, rng: int) -> tuple[np.ndarray]:
     
     return hist
 
-def histogram_scale(img: np.ndarray, lower_range, upper_range) -> np.ndarray:
+def histogram_scale(img: np.ndarray, lower_range: int, upper_range: int) -> np.ndarray:
     """
     Scale the histogram of an image to a specified range.
     
@@ -214,7 +214,7 @@ def histogram_scale(img: np.ndarray, lower_range, upper_range) -> np.ndarray:
     
     return img
 
-def histogram_equalization(img: np.ndarray, ) -> np.ndarray:
+def histogram_equalization(img: np.ndarray) -> np.ndarray:
     """
     Apply histogram equalization to an image.
     

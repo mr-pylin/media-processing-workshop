@@ -1,7 +1,7 @@
 import numpy as np
 
 # a simple function similar to np.pad()
-def pad(signal: np.ndarray, pad_width: int, mode: str = 'fill', fill_value: int = 0):
+def pad(signal: np.ndarray, pad_width: int, mode: str = 'fill', fill_value: int = 0) -> np.ndarray:
     """
     Pad an array with specified padding options.
     
@@ -201,13 +201,13 @@ if __name__ == '__main__':
     arr2 = np.arange(25).reshape(5, 5)
     filter_2 = np.arange(9).reshape(3, 3)
     
-    print(pad(signal= arr1, pad_width= 2, mode= 'fill', fill_value= 2))
-    print(pad(signal= arr1, pad_width= 2, mode= 'circular'))
-    print(pad(signal= arr1, pad_width= 2, mode= 'symmetric'))
+    print(pad(signal=arr1, pad_width=2, mode='fill', fill_value=2))
+    print(pad(signal=arr1, pad_width=2, mode='circular'))
+    print(pad(signal=arr1, pad_width=2, mode='symmetric'))
     
-    print(pad(signal= arr2, pad_width= 2, mode= 'fill', fill_value= 0))
-    print(pad(signal= arr2, pad_width= 2, mode= 'circular'))
-    print(pad(signal= arr2, pad_width= 2, mode= 'symmetric'))
+    print(pad(signal=arr2, pad_width=2, mode='fill', fill_value=0))
+    print(pad(signal=arr2, pad_width=2, mode='circular'))
+    print(pad(signal=arr2, pad_width=2, mode='symmetric'))
     
-    print(convolve_1d(arr1, filter_1, mode= 'same', boundary= 'fill', fill_value= 0))
-    print(convolve_2d(arr2, filter_2, mode= 'valid', boundary= 'fill', fill_value= 0))
+    print(convolve_1d(arr1, filter_1, mode='same', boundary='fill', fill_value=0))
+    print(convolve_2d(arr2, filter_2, mode='valid', boundary='fill', fill_value=0))
