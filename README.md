@@ -166,86 +166,90 @@ I look forward to connecting with you! 🏃‍♂️
    - The images located in the [./assets/images/dip_3rd/](./assets/images/dip_3rd/) folder are licensed under the table below.
    - Resources are available for `personal educational or research purposes` at [imageprocessingplace.com](https://www.imageprocessingplace.com/DIP-3E/dip3e_book_images_downloads.htm).
 <table style="margin: 0 auto;">
-  <tr>
-    <th>Image</th>
-    <th>Copyright Owner</th>
-    <th>Address</th>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/dip_3rd/CH02_Fig0222(b)(cameraman).tif">CH02_Fig0222(b)(cameraman)</a></td>
-    <td>Massachusetts Institute of Technology</td>
-    <td><a href="https://MIT.edu">MIT.edu</a></td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/dip_3rd/CH03_Fig0309(a)(washed_out_aerial_image).tif">CH03_Fig0309(a)(washed_out_aerial_image)</a></td>
-    <td>NASA</td>
-    <td><a href="https://nasa.gov">nasa.gov</a></td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/dip_3rd/CH03_Fig0326(a)(embedded_square_noisy_512).tif">CH03_Fig0326(a)(embedded_square_noisy_512).tif</a></td>
-    <td>-</td>
-    <td><a href="https://imageprocessingplace.com">imageprocessingplace.com</a></td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/dip_3rd/CH03_Fig0354(a)(einstein_orig).tif">CH03_Fig0354(a)(einstein_orig).tif</a></td>
-    <td>Public domain</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/dip_3rd/CH06_Fig0638(a)(lenna_RGB).tif">CH06_Fig0638(a)(lenna_RGB).tif</a></td>
-    <td>Public domain</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/dip_3rd/CH06_FigP0606(color_bars).tif">CH06_FigP0606(color_bars).tif</a></td>
-    <td>-</td>
-    <td>-</td>
-  </tr>  
+   <thead>
+      <tr>
+         <th>Image</th>
+         <th>Copyright Owner</th>
+         <th>Address</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><a href="./assets/images/dip_3rd/CH02_Fig0222(b)(cameraman).tif">CH02_Fig0222(b)(cameraman).tif</a></td>
+         <td>Massachusetts Institute of Technology</td>
+         <td><a href="https://MIT.edu">MIT.edu</a></td>
+      </tr>
+      <tr>
+         <td><a href="./assets/images/dip_3rd/CH03_Fig0309(a)(washed_out_aerial_image).tif">CH03_Fig0309(a)(washed_out_aerial_image).tif</a></td>
+         <td>NASA</td>
+         <td><a href="https://nasa.gov">nasa.gov</a></td>
+      </tr>
+      <tr>
+         <td><a href="./assets/images/dip_3rd/CH03_Fig0326(a)(embedded_square_noisy_512).tif">CH03_Fig0326(a)(embedded_square_noisy_512).tif</a></td>
+         <td>-</td>
+         <td><a href="https://imageprocessingplace.com">imageprocessingplace.com</a></td>
+      </tr>
+      <tr>
+         <td><a href="./assets/images/dip_3rd/CH03_Fig0354(a)(einstein_orig).tif">CH03_Fig0354(a)(einstein_orig).tif</a></td>
+         <td>Public domain</td>
+         <td>-</td>
+      </tr>
+      <tr>
+         <td><a href="./assets/images/dip_3rd/CH06_Fig0638(a)(lenna_RGB).tif">CH06_Fig0638(a)(lenna_RGB).tif</a></td>
+         <td>Public domain</td>
+         <td>-</td>
+      </tr>
+      <tr>
+         <td><a href="./assets/images/dip_3rd/CH06_FigP0606(color_bars).tif">CH06_FigP0606(color_bars).tif</a></td>
+         <td>-</td>
+         <td>-</td>
+      </tr>
+   </tbody>
 </table>
 
 - **Third-Party Assets**:
    - Additional images located in [./assets/images/third_party/](./assets/images/third_party/) are used with permission or according to their original licenses.
    - Attributions and references to original sources are included in the code where these images are used.
 <table style="margin: 0 auto;">
-  <tr>
-    <th>Image</th>
-    <th>Copyright Owner</th>
-    <th>Address</th>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/third_party/nature_1.jpg">nature_1.jpg</a></td>
-    <td>-</td>
-    <td><a href="https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/">pexels.com</a></td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/third_party/nature_2.jpg">nature_2.jpg</a></td>
-    <td>-</td>
-    <td><a href="https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/">pexels.com</a></td>
-  </tr>
+   <tr>
+      <th>Image</th>
+      <th>Copyright Owner</th>
+      <th>Address</th>
+   </tr>
+   <tr>
+      <td><a href="./assets/images/third_party/nature_1.jpg">nature_1.jpg</a></td>
+      <td>-</td>
+      <td><a href="https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/">pexels.com</a></td>
+   </tr>
+   <tr>
+      <td><a href="./assets/images/third_party/nature_2.jpg">nature_2.jpg</a></td>
+      <td>-</td>
+      <td><a href="https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/">pexels.com</a></td>
+   </tr>
 </table>
 
 - **Miscellaneous assets**:
 <table style="margin: 0 auto;">
-  <tr>
-    <th>Image</th>
-    <th>Copyright Owner</th>
-    <th>Address</th>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/misc/keyboard_1.jpg">keyboard_1.jpg</a></td>
-    <td>Amirhossein Heydari</td>
-    <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/misc/keyboard_2.jpg">keyboard_2.jpg</a></td>
-    <td>Amirhossein Heydari</td>
-    <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
-  </tr>
-  <tr>
-    <td><a href="./assets/images/misc/test.tif">test.tif</a></td>
-    <td>Amirhossein Heydari</td>
-    <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
-  </tr>
+   <tr>
+      <th>Image</th>
+      <th>Copyright Owner</th>
+      <th>Address</th>
+   </tr>
+   <tr>
+      <td><a href="./assets/images/misc/keyboard_1.jpg">keyboard_1.jpg</a></td>
+      <td>Amirhossein Heydari</td>
+      <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
+   </tr>
+   <tr>
+      <td><a href="./assets/images/misc/keyboard_2.jpg">keyboard_2.jpg</a></td>
+      <td>Amirhossein Heydari</td>
+      <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
+   </tr>
+   <tr>
+      <td><a href="./assets/images/misc/test.tif">test.tif</a></td>
+      <td>Amirhossein Heydari</td>
+      <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
+   </tr>
 </table>
 
 # 📄 License
