@@ -1,0 +1,30 @@
+[tool.poetry]
+package-mode = false
+name = "media_processing_workshop"
+description = "A comprehensive resource to explore media processing, from fundamental concepts to advanced techniques"
+authors = ["Amirhossein Heydari <amirhosseinheydari78@gmail.com>"]
+maintainers = ["Amirhossein Heydari <amirhosseinheydari78@gmail.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/mr-pylin/media-processing-workshop"
+keywords = ["DIP", "digital image processing", "image processing", "media processing"]
+readme = "README.md"
+
+[tool.poetry.urls]
+"Amirhossein Heydari Homepage" = "https://mr-pylin.github.io"
+
+[tool.poetry.dependencies]
+python = "3.13.1"
+ipykernel = "^6.29.5"
+ipywidgets = "^8.1.5"
+matplotlib = "^3.10.0"
+numpy = "^2.2.3"
+opencv-contrib-python = "^4.11.0.86"
+pillow = "^11.1.0"
+scikit-image = "^0.25.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
