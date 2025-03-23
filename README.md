@@ -97,7 +97,7 @@ pip install -r requirements.txt
 - It is **highly recommended** to stick with the exact dependency versions specified in [**poetry.lock**](./poetry.lock) or [**requirements.txt**](./requirements.txt) rather than using the latest package versions. The repository has been **tested** on these versions to ensure **compatibility** and **stability**.
 - This repository is **actively maintained**, and dependencies are **updated regularly** to the latest **stable** versions.
 - The **table of contents** embedded in the **notebooks** may not function correctly on **GitHub**.
-- For an improved experience, open the notebooks **locally** or view them via [**nbviewer**](https://nbviewer.org/github/mr-pylin/pytorch-workshop).
+- For an improved experience, open the notebooks **locally** or view them via [**nbviewer**](https://nbviewer.org/github/mr-pylin/media-processing-workshop).
 
 ## 🔗 Usefull Links
 
