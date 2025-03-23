@@ -12,107 +12,44 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 
 ## 📖 Table of Contents
 
-### Main Notebooks
+### 📖 Main Notebooks
 
-   1. [**Introduction**](./codes/01_introduction.ipynb)  
-   How to read/plot an image using [matplotlib](https://matplotlib.org/) package
-   Image properties: color, dtype, depth, resolution, ...
-   1. [**Basic Modifications**](./codes/02_basic-modification.ipynb)  
-   Crop, Flip, Circular Shift, Rotation
-   1. [**Interpolations**](./codes/03_interpolations.ipynb)  
-   Nearest Neighbor, BiLinear, BiCubic, Lanczos interpolation
-   1. [**Intensity Transformation**](./codes/04_intensity-transformation.ipynb)  
-   Negative, Logarithm, Power-Law (Gamma correction), Piecewise-Linear Transform
-   1. [**Histogram**](./codes/05_histogram.ipynb)  
-   Histogram Stretching, Shrinking, Sliding  
-   Global Histogram Equalization  
-   Local Histogram Equalization (Adaptive Histogram Equalization)  
-   Adaptive Contrast Enhancement (ACE)  
-   Histogram Matching (Specification)  
-   1. [**Convolution**](./codes/06_convolution.ipynb)  
-   1D Convolution  
-   2D Convolution (GrayScale/RGB image)  
-   1. [**Fourier Transform**](./codes/07_fourier-transform.ipynb)  
-   Basis vectors(1D)/images(2D)  
-   Forward/Backward Fourier Transform
-   Fast Fourier Transform (FFT)  
-   Ideal Low-Pass filter  
-   Cardinal Sine (sinc) filter  
-   Ringing Effect  
-   Shift, Rotation, Flip effect in frequency domain  
-   Image sharpening using a gaussian high-pass filter  
-   Periodic noise removal  
-   1. [**Cosine Transform**](./codes/08_cosine-transform.ipynb)  
-   Basis vectors(1D)/images(2D)  
-   Forward/Backward Cosine Transform  
-   Compression Effect (DFT vs DCT)  
-   Zonal Masking  
-   1. [**Quality Assessment**](./codes/09_quality-assessment.ipynb)  
-   Mean Squared Error (MSE)  
-   Signal-to-Noise Ratio (SNR)  
-   Peak Signal-to-Noise Ratio (PSNR)  
-   Structural Similarity Index (SSIM)  
-   Root Mean Square Error (RMSE)  
-   Mean Absolute Error (MAE)  
-   Mean Structural Similarity Index (MSSIM)  
-   Visual Information Fidelity (VIF)  
-   Feature Similarity Index (FSIM)  
-   Multi-Scale Structural Similarity Index (MS-SSIM)  
-   1. [**Steganography**](./codes/10_least-significant-bit-steganography.ipynb)  
-   Steganography using least significant bits
-   1. [**JPEG codec**](./codes/11_jpeg-codec.ipynb)  
-   JPEG Encoder & Decoder
-   1. [**MPEG codec**](./codes/12_mpeg-codec.ipynb)  
-   MPEG Encoder & Decoder
-   1. [**Image Registration**](./codes/13_image-registration.ipynb)  
-   Aligning multiple images into a common coordinate system
-   1. [**Image Stitching**](./codes/14_image-stitching.ipynb)  
-   Combining multiple images to create a single larger image [Panorama]
-   1. [**Optical Flow**](./codes/15_optical-flow.ipynb)  
-   Optical Flow using Lucas-Kanade & Farneback algorithms
+1. [**Introduction to Digital Images**](./code/01-introduction.ipynb)
+1. [**Load & Save Images**](./code/02-io.ipynb)
+1. [**Interpolating Images**](./code/03-interpolation.ipynb)
+1. [**Apply Geometric Transformations**](./code/04-geometric-transformation.ipynb)
+1. [**Intensity Transformations**](./code/05-intensity-transformation.ipynb)
+1. [**Histogram Processing**](./code/06-histogram.ipynb)
+1. [**Spatial Filtering using Convolution**](./code/07-spatial-filtering.ipynb)
+1. [**Frequency Filtering using Fourier & Cosine Transform**](./code/08-frequency-filtering.ipynb)
 
-### Utilities
+### 📖 Utilities
 
-Implementation of several concepts utilized in the main notebooks
+A collection of concepts and tools utilized in the main notebooks
 
-- [**Padding and Convolution**](./codes/utils/convolution.py)  
-   Provides utility functions for 1D and 2D convolution, along with flexible padding options.
-- [**DCT Implementation**](./codes/utils/dct.py)  
-   Discrete Cosine Transform (DCT) implementation for 1D and 2D signals.
-- [**DFT Implementation**](./codes/utils/dft.py)  
-   Implementations of 1D and 2D Discrete Fourier Transform (DFT) and related functions.
-- [**Filter Functions Implementation**](./codes/utils/filters.py)  
-   Implementations of various 2D filter functions including ideal, Gaussian, sinc, Butterworth, Chebyshev, Bessel, and block masks.
-- [**JPEG Codec Implementation**](./codes/utils/jpeg.py)  
-   Class-based implementation of JPEG encoder and decoder using discrete cosine transform (DCT) and quantization.
-- [**MPEG Codec Implementation**](./codes/utils/mpeg.py)  
-   Class-based implementation of MPEG encoder and decoder using discrete cosine transform (DCT) and quantization.
-- [**Quality Assessment Metrics**](./codes/utils/quality_assessment.py)  
-   Implementation of famous metrics e.g. MSE, SNR, PSNR, SSIM, RMSE, MAE, ...
-- [**Spatial Modifications**](./codes/utils/spatial_modification.py)  
-   Implementation of concepts in spatial domain e.g. interpolations and histograms
-- [**Steganography**](./codes/utils/steganography.py)  
-   Implementation of a simple steganography method using Least Significant Bits (LSB)
+- [**Several Color Spaces**](./code/utils/color-space.ipynb)
+- [**Prerequisites and Introductions to Convolution**](./code/utils/convolution.ipynb)
+- [**Several Quality Assessment Metrics**](./code/utils/quality-assessment.ipynb)
+- [**Prerequisites and Introductions to Frequency Transforms**](./code/utils/transform.ipynb)
 
 ## 📋 Prerequisites
 
-- **Programming Fundamentals**
-  - Proficiency in **Python** (data types, control structures, functions, etc.).
+- 👨‍💻 **Programming Fundamentals**
+  - Proficiency in **Python** (data types, control structures, functions, classes, etc.).
     - My Python Workshop: [github.com/mr-pylin/python-workshop](https://github.com/mr-pylin/python-workshop)
-  - Experience with libraries like **NumPy**, **Matplotlib** and **OpenCV**.
+  - Experience with libraries like **NumPy** and **Matplotlib**.
     - My NumPy Workshop: [github.com/mr-pylin/numpy-workshop](https://github.com/mr-pylin/numpy-workshop)
-    - My MatPlotLib Workshop: [Coming Soon](https://github.com/mr-pylin/#)
-    - My OpenCV Workshop: [Coming Soon](https://github.com/mr-pylin/#)
-- **Digital Signal Processing Knowledge**
-  - [*Digital Image Processing (4th Edition)*](https://www.imageprocessingplace.com/DIP-4E/dip4e_main_page.htm) written by [Rafael C. Gonzalez](https://www.imageprocessingplace.com/root_files_V3/about_the_authors/gonzalez.htm) & [Richard E. Woods](https://www.imageprocessingplace.com/root_files_V3/about_the_authors/woods.htm)
-  - [*The Scientist and Engineer's Guide to Digital Signal Processing*](https://www.dspguide.com/pdfbook.htm) written by [Steven W. Smith](https://www.dspguide.com/swsmith.htm)
-- **Mathematics for Image Processing**
-  - Linear Algebra: Understanding of vectors, matrices, and matrix operations, crucial for transformations, convolutions, and Fourier analysis.
-    - [*Linear Algebra Review and Reference*](https://www.cs.cmu.edu/%7Ezkolter/course/linalg/linalg_notes.pdf) written by [Zico Kolter](https://zicokolter.com)
-    - [*Notes on Linear Algebra*](https://webspace.maths.qmul.ac.uk/p.j.cameron/notes/linalg.pdf) written by [Peter J. Cameron](https://cameroncounts.github.io/web)
-    - [*MATH 233 - Linear Algebra I Lecture Notes*](https://www.geneseo.edu/~aguilar/public/assets/courses/233/main_notes.pdf) written by [Cesar O. Aguilar](https://www.geneseo.edu/~aguilar/)
-  - Probability & Statistics: Probability distributions, mean/variance, etc.
-    - [*MATH1024: Introduction to Probability and Statistics*](https://www.sujitsahu.com/teach/2020_math1024.pdf) written by [Sujit Sahu](https://www.southampton.ac.uk/people/5wynjr/professor-sujit-sahu)
+    - My Data Visualization Workshop: [github.com/mr-pylin/data-visualization-workshop](https://github.com/mr-pylin/data-visualization-workshop)
+- 🔣 **Mathematics for Machine Learning**
+  - 🔲 **Linear Algebra**: Vectors, matrices, matrix operations.
+    - [**Linear Algebra Review and Reference**](https://www.cs.cmu.edu/%7Ezkolter/course/linalg/linalg_notes.pdf) written by [*Zico Kolter*](https://zicokolter.com).
+    - [**Notes on Linear Algebra**](https://webspace.maths.qmul.ac.uk/p.j.cameron/notes/linalg.pdf) written by [*Peter J. Cameron*](https://cameroncounts.github.io/web).
+    - [**MATH 233 - Linear Algebra I Lecture Notes**](https://www.geneseo.edu/~aguilar/public/assets/courses/233/main_notes.pdf) written by [*Cesar O. Aguilar*](https://www.geneseo.edu/~aguilar/).
+  - 🎲 **Probability & Statistics**: Probability distributions, mean/variance, etc.
+    - [**MATH1024: Introduction to Probability and Statistics**](https://www.sujitsahu.com/teach/2020_math1024.pdf) written by [*Sujit Sahu*](https://www.southampton.ac.uk/people/5wynjr/professor-sujit-sahu).
+- 📶 **Digital Signal Processing Knowledge**
+  - [**Digital Image Processing (4th Edition)**](https://www.imageprocessingplace.com/DIP-4E/dip4e_main_page.htm) written by [*Rafael C. Gonzalez*](https://www.imageprocessingplace.com/root_files_V3/about_the_authors/gonzalez.htm) & [*Richard E. Woods*](https://www.imageprocessingplace.com/root_files_V3/about_the_authors/woods.htm)
+  - [**The Scientist and Engineer's Guide to Digital Signal Processing**](https://www.dspguide.com/pdfbook.htm) written by [*Steven W. Smith*](https://www.dspguide.com/swsmith.htm)
 
 ## ⚙️ Setup
 
@@ -127,10 +64,22 @@ This project requires Python **v3.10** or higher. It was developed and tested us
 [![opencv-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.11.0.86-blue)](https://pypi.org/project/opencv-contrib-python/4.11.0.86/)
 [![pillow](https://img.shields.io/badge/pillow-11.1.0-cyan)](https://pypi.org/project/Pillow/11.1.0/)
 [![scikit-image](https://img.shields.io/badge/scikit--image-0.25.2-darkblue)](https://pypi.org/project/scikit-image/0.25.2/)
+[![scipy](https://img.shields.io/badge/scipy-1.15.2-purple)](https://pypi.org/project/scipy/1.15.2/)
 
 ### 📦 Installing Dependencies
 
-You can install all dependencies listed in `requirements.txt` using [pip](https://pip.pypa.io/en/stable/installation/).
+#### 📦 Method 1: Poetry (**Recommended** ✅)
+
+Use [**Poetry**](https://python-poetry.org/) for dependency management. It handles dependencies, virtual environments, and locking versions more efficiently than pip.  
+To install exact dependency versions specified in [**poetry.lock**](./poetry.lock) for consistent environments **without** installing the current project as a package:
+
+```bash
+poetry install --no-root
+```
+
+#### 📦 Method 2: Pip
+
+Install all dependencies listed in [**requirements.txt**](./requirements.txt) using [**pip**](https://pip.pypa.io/en/stable/installation/):
 
 ```bash
 pip install -r requirements.txt
@@ -138,46 +87,66 @@ pip install -r requirements.txt
 
 ### 🛠️ Usage Instructions
 
-- Open the root folder with [VS Code](https://code.visualstudio.com/)
-  - **Windows/Linux**: `Ctrl + K` followed by `Ctrl + O`
-  - **macOS**: `Cmd + K` followed by `Cmd + O`
-- Open `.ipynb` files using [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) integrated with **VS Code**
-- Allow **VS Code** to install any recommended dependencies for working with Jupyter Notebooks.
-- Note: Jupyter is integrated with both **VS Code** & **[Google Colab](https://colab.research.google.com/)**
+1. Open the root folder with [**VS Code**](https://code.visualstudio.com/) (`Ctrl/Cmd + K` followed by `Ctrl/Cmd + O`).
+1. Open `.ipynb` files using the [**Jupyter extension**](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) integrated with **VS Code**.
+1. Select the correct Python kernel and virtual environment where the dependencies were installed.
+1. Allow **VS Code** to install any recommended dependencies for working with Jupyter Notebooks.
+
+✍️ **Notes**:  
+
+- It is **highly recommended** to stick with the exact dependency versions specified in [**poetry.lock**](./poetry.lock) or [**requirements.txt**](./requirements.txt) rather than using the latest package versions. The repository has been **tested** on these versions to ensure **compatibility** and **stability**.
+- This repository is **actively maintained**, and dependencies are **updated regularly** to the latest **stable** versions.
+- The **table of contents** embedded in the **notebooks** may not function correctly on **GitHub**.
+- For an improved experience, open the notebooks **locally** or view them via [**nbviewer**](https://nbviewer.org/github/mr-pylin/pytorch-workshop).
 
 ## 🔗 Usefull Links
+
+### Tools
 
 - **ffmpeg & ffprobe**:
   - ffmpeg is a Swiss Army knife for media, converting and manipulating audio and video files in a wide range of formats.
   - Link: [github.com/BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)
-- **YUV4MPEG Videos**:
-  - Derf's video collection provides uncompressed YUV4MPEG clips for testing video codecs.
-  - Link: [media.xiph.org/video/derf](https://media.xiph.org/video/derf/)
+
 - **Video Quality Measurement Tool (VQMT)**:
   - It is a software program designed to analyze the quality of digital video and images.
   - Link: [compression.ru/video/quality_measure](http://www.compression.ru/video/quality_measure/vqmt_download.html)
+
 - **yuv-player**:
   - Lightweight YUV player which supports various YUV format.
   - Link: [github.com/Tee0125/yuvplayer](https://github.com/Tee0125/yuvplayer)
-- **H.264 (AVC) codec**:
-  - The most widely used video compression standard, offering high quality at low bitrates.
-  - Link: [vcgit.hhi.fraunhofer.de/jvet/JM](https://vcgit.hhi.fraunhofer.de/jvet/JM)
-- **H.265 (HEVC) codec**:
-  - Successor to H.264, offering even better compression for even higher quality or lower bitrates.
-  - Link: [vcgit.hhi.fraunhofer.de/jvet/HM](https://vcgit.hhi.fraunhofer.de/jvet/HM)
-- **H.266 (VVC) codec**:
-  - The latest video compression standard, offering significant efficiency improvements over H.265 for high-resolution streaming and future video applications.
-  - Encoder link: [github.com/fraunhoferhhi/vvenc](https://github.com/fraunhoferhhi/vvenc)
-  - Decoder link: [github.com/fraunhoferhhi/vvdec](https://github.com/fraunhoferhhi/vvdec)
-- **NumPy**
-  - A fundamental package for scientific computing in Python, providing support for arrays, matrices, and a large collection of mathematical functions.
-  - Official site: [numpy.org](https://numpy.org)
-- **MatPlotLib**:
-  - A comprehensive library for creating static, animated, and interactive visualizations in Python
-  - Official site: [matplotlib.org](https://matplotlib.org)
-- **OpenCV**:
-  - A powerful library for computer vision and image processing, supporting real-time operations on images and videos in Python and other languages.
-  - Official site: [opencv.org](https://opencv.org)
+
+### Benchmark Files
+
+- **DIP3/e — Book Images**
+  - A collection of all images and videos used in the **Digital Image Processing (3rd Edition)** book written by [*Rafael C. Gonzalez*](https://www.imageprocessingplace.com/root_files_V3/about_the_authors/gonzalez.htm) & [*Richard E. Woods*](https://www.imageprocessingplace.com/root_files_V3/about_the_authors/woods.htm).
+  - Permission is required from the owner of a © image if the image is used for other than personal educational or research purposes.
+  - Link: [imageprocessingplace.com/DIP-3E/dip3e_book_images_downloads.htm](https://www.imageprocessingplace.com/DIP-3E/dip3e_book_images_downloads.htm)
+
+- **YUV4MPEG Videos**:
+  - Derf's video collection provides uncompressed YUV4MPEG clips for testing video codecs.
+  - Link: [media.xiph.org/video/derf](https://media.xiph.org/video/derf/)
+
+### Codecs
+
+- Codecs are algorithms used to **compress** and **decompress** signals, ensuring **efficient storage and transmission of high-quality** signals **e.g. videos**.
+- For detailed information on popular image/video codecs, refer to the [**./codecs/README.md**](./codecs/README.md).
+
+### **NumPy**
+
+- A fundamental package for scientific computing in Python, providing support for **arrays**, **matrices**, and a large collection of **mathematical functions**.
+- Official site: [numpy.org](https://numpy.org/)
+
+### **Data Visualization**
+
+- A comprehensive collection of Python libraries for creating static, animated, and interactive visualizations: **Matplotlib**, **Seaborn**, and **Plotly**.
+- Official sites: [matplotlib.org](https://matplotlib.org/) | [seaborn.pydata.org](https://seaborn.pydata.org/) | [plotly.com](https://plotly.com/)
+
+### **OpenCV (Open Source Computer Vision Library)**
+
+- A powerful open-source library (primarily written in C++) for computer vision and image processing tasks.
+- Supports a wide range of functionalities, including image and video processing, object detection, facial recognition, and more.
+- Compatible with multiple programming languages, including Python, C++, and Java.
+- Official sites: [opencv.org](https://opencv.org/)
 
 ## 🔍 Find Me
 
@@ -187,103 +156,33 @@ Any mistakes, suggestions, or contributions? Feel free to reach out to me at:
 
 I look forward to connecting with you! 🏃‍♂️
 
-## ©️ Copyright Information
-
-- **Digital Image Processing by Gonzalez & Woods**:
-  - The images located in the [./assets/images/dip_3rd/](./assets/images/dip_3rd/) folder are licensed under the table below.
-  - Resources are available for `personal educational or research purposes` at [imageprocessingplace.com](https://www.imageprocessingplace.com/DIP-3E/dip3e_book_images_downloads.htm).
-
-<table style="margin: 0 auto;">
-   <thead>
-      <tr>
-         <th>Image</th>
-         <th>Copyright Owner</th>
-         <th>Address</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td><a href="./assets/images/dip_3rd/CH02_Fig0222(b)(cameraman).tif">CH02_Fig0222(b)(cameraman).tif</a></td>
-         <td>Massachusetts Institute of Technology</td>
-         <td><a href="https://MIT.edu">MIT.edu</a></td>
-      </tr>
-      <tr>
-         <td><a href="./assets/images/dip_3rd/CH03_Fig0309(a)(washed_out_aerial_image).tif">CH03_Fig0309(a)(washed_out_aerial_image).tif</a></td>
-         <td>NASA</td>
-         <td><a href="https://nasa.gov">nasa.gov</a></td>
-      </tr>
-      <tr>
-         <td><a href="./assets/images/dip_3rd/CH03_Fig0326(a)(embedded_square_noisy_512).tif">CH03_Fig0326(a)(embedded_square_noisy_512).tif</a></td>
-         <td>-</td>
-         <td><a href="https://imageprocessingplace.com">imageprocessingplace.com</a></td>
-      </tr>
-      <tr>
-         <td><a href="./assets/images/dip_3rd/CH03_Fig0354(a)(einstein_orig).tif">CH03_Fig0354(a)(einstein_orig).tif</a></td>
-         <td>Public domain</td>
-         <td>-</td>
-      </tr>
-      <tr>
-         <td><a href="./assets/images/dip_3rd/CH06_Fig0638(a)(lenna_RGB).tif">CH06_Fig0638(a)(lenna_RGB).tif</a></td>
-         <td>Public domain</td>
-         <td>-</td>
-      </tr>
-      <tr>
-         <td><a href="./assets/images/dip_3rd/CH06_FigP0606(color_bars).tif">CH06_FigP0606(color_bars).tif</a></td>
-         <td>-</td>
-         <td>-</td>
-      </tr>
-   </tbody>
-</table>
-
-- **Third-Party Assets**:
-  - Additional images located in [./assets/images/third_party/](./assets/images/third_party/) are used with permission or according to their original licenses.
-  - Attributions and references to original sources are included in the code where these images are used.
-
-<table style="margin: 0 auto;">
-   <tr>
-      <th>Image</th>
-      <th>Copyright Owner</th>
-      <th>Address</th>
-   </tr>
-   <tr>
-      <td><a href="./assets/images/third_party/nature_1.jpg">nature_1.jpg</a></td>
-      <td>-</td>
-      <td><a href="https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/">pexels.com</a></td>
-   </tr>
-   <tr>
-      <td><a href="./assets/images/third_party/nature_2.jpg">nature_2.jpg</a></td>
-      <td>-</td>
-      <td><a href="https://www.pexels.com/photo/areal-view-of-lake-bridge-and-trees-during-daytime-145525/">pexels.com</a></td>
-   </tr>
-</table>
-
-- **Miscellaneous assets**:
-
-<table style="margin: 0 auto;">
-   <tr>
-      <th>Image</th>
-      <th>Copyright Owner</th>
-      <th>Address</th>
-   </tr>
-   <tr>
-      <td><a href="./assets/images/misc/keyboard_1.jpg">keyboard_1.jpg</a></td>
-      <td>Amirhossein Heydari</td>
-      <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
-   </tr>
-   <tr>
-      <td><a href="./assets/images/misc/keyboard_2.jpg">keyboard_2.jpg</a></td>
-      <td>Amirhossein Heydari</td>
-      <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
-   </tr>
-   <tr>
-      <td><a href="./assets/images/misc/test.tif">test.tif</a></td>
-      <td>Amirhossein Heydari</td>
-      <td><a href="https://github.com/mr-pylin">github.com/mr-pylin</a></td>
-   </tr>
-</table>
-
 ## 📄 License
 
 This project is licensed under the **[Apache License 2.0](./LICENSE)**.  
-You are free to use, modify, and distribute this code, but you must include copies of both the [**LICENSE**](./LICENSE) and [**NOTICE**](./NOTICE) files in any distribution of your work.  
-Note: Assets in the above tables may have their own licenses
+You are free to **use**, **modify**, and **distribute** this code, but you **must** include copies of both the [**LICENSE**](./LICENSE) and [**NOTICE**](./NOTICE) files in any distribution of your work.
+
+### ©️ Copyright Information
+
+- **Original Images**:
+  - The images located in the [./assets/images/original/](./assets/images/original/) folder are licensed under the **[CC BY-ND 4.0](./assets/images/original/LICENSE)**.
+  - Note: This license restricts derivative works, meaning you may share these images but cannot modify them.
+
+- The images located in the [./assets/images/dip_3rd/](./assets/images/dip_3rd/) folder are licensed under the table below:  
+
+  | Image                                                                                      | Copyright Owner                            | Address                               |
+  |--------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------|
+  | [CH02_Fig0222(b)(cameraman).tif](./assets/images/dip_3rd/CH02_Fig0222(b)(cameraman).tif)    | Massachusetts Institute of Technology      | [MIT.edu](https://MIT.edu)           |
+  | [CH03_Fig0309(a)(washed_out_aerial_image).tif](./assets/images/dip_3rd/CH03_Fig0309(a)(washed_out_aerial_image).tif) | NASA                                       | [nasa.gov](https://nasa.gov)         |
+  | [CH03_Fig0326(a)(embedded_square_noisy_512).tif](./assets/images/dip_3rd/CH03_Fig0326(a)(embedded_square_noisy_512).tif) | -                                          | [imageprocessingplace.com](https://imageprocessingplace.com) |
+  | [CH03_Fig0354(a)(einstein_orig).tif](./assets/images/dip_3rd/CH03_Fig0354(a)(einstein_orig).tif) | Public domain                              | -                                     |
+  | [CH06_Fig0638(a)(lenna_RGB).tif](./assets/images/dip_3rd/CH06_Fig0638(a)(lenna_RGB).tif)    | Public domain                              | -                                     |
+  | [CH06_FigP0606(color_bars).tif](./assets/images/dip_3rd/CH06_FigP0606(color_bars).tif)      | -                                          | -                                     |
+
+- **Third-Party Assets**:
+
+  - Additional images located in [./assets/images/third_party/](./assets/images/third_party/) are used with permission or according to their original licenses.
+  - Attributions and references to the files included in [./assets/images/third_party/](./assets/images/third_party/) are included in the code where these images are used.
+
+- **Miscellaneous assets**:
+
+  - The images found in [./assets/images/misc/](./assets/images/misc/) are modified versions of the ones listed above.
