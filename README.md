@@ -59,8 +59,8 @@ This project requires Python **v3.10** or higher. It was developed and tested us
 
 [![ipykernel](https://img.shields.io/badge/ipykernel-6.29.5-ff69b4)](https://pypi.org/project/ipykernel/6.29.5/)
 [![ipywidgets](https://img.shields.io/badge/ipywidgets-8.1.5-ff6347)](https://pypi.org/project/ipywidgets/8.1.5/)
-[![matplotlib](https://img.shields.io/badge/matplotlib-3.10.0-green)](https://pypi.org/project/matplotlib/3.10.0/)
-[![numpy](https://img.shields.io/badge/numpy-2.2.3-orange)](https://pypi.org/project/numpy/2.2.3/)
+[![matplotlib](https://img.shields.io/badge/matplotlib-3.10.1-green)](https://pypi.org/project/matplotlib/3.10.1/)
+[![numpy](https://img.shields.io/badge/numpy-2.2.4-orange)](https://pypi.org/project/numpy/2.2.4/)
 [![opencv-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.11.0.86-blue)](https://pypi.org/project/opencv-contrib-python/4.11.0.86/)
 [![pillow](https://img.shields.io/badge/pillow-11.1.0-cyan)](https://pypi.org/project/Pillow/11.1.0/)
 [![scikit-image](https://img.shields.io/badge/scikit--image-0.25.2-darkblue)](https://pypi.org/project/scikit-image/0.25.2/)
