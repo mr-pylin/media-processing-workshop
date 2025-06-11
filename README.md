@@ -22,14 +22,18 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 1. [**Histogram Processing**](./code/06-histogram.ipynb)
 1. [**Spatial Filtering using Convolution**](./code/07-spatial-filtering.ipynb)
 1. [**Frequency Filtering using Fourier & Cosine Transform**](./code/08-frequency-filtering.ipynb)
+1. [**Multi-Resolution Analysis (Wavelet Transform)**](./code/09-multi-resolution-analysis.ipynb)
+1. [**Image Compression (JPEG Coded)**](./code/10-image-compression.ipynb)
+1. [**Morphological Processing**](./code/11-morphological-processing.ipynb)
 
 ### 📖 Utilities
 
 A collection of concepts and tools utilized in the main notebooks
 
-- [**Several Color Spaces**](./code/utils/color-space.ipynb)
+- [**Color Spaces**](./code/utils/color-space.ipynb)
+- [**Introductions to Compression**](./code/utils/compression.ipynb)
 - [**Prerequisites and Introductions to Convolution**](./code/utils/convolution.ipynb)
-- [**Several Quality Assessment Metrics**](./code/utils/quality-assessment.ipynb)
+- [**Quality Assessment Metrics**](./code/utils/quality-assessment.ipynb)
 - [**Prerequisites and Introductions to Frequency Transforms**](./code/utils/transform.ipynb)
 
 ## 📋 Prerequisites
