@@ -61,6 +61,7 @@ This project requires Python **v3.10** or higher. It was developed and tested us
 
 ### 📝 List of Dependencies
 
+[![imagecodecs](https://img.shields.io/badge/imagecodecs-2025.3.30-008080)](https://pypi.org/project/imagecodecs/2025.3.30/)
 [![ipykernel](https://img.shields.io/badge/ipykernel-6.29.5-ff69b4)](https://pypi.org/project/ipykernel/6.29.5/)
 [![ipywidgets](https://img.shields.io/badge/ipywidgets-8.1.5-ff6347)](https://pypi.org/project/ipywidgets/8.1.5/)
 [![matplotlib](https://img.shields.io/badge/matplotlib-3.10.1-green)](https://pypi.org/project/matplotlib/3.10.1/)
