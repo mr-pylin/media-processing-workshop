@@ -12,6 +12,10 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 
 ## 📖 Table of Contents
 
+### 📘 Foundations
+
+1. [**Complex Numbers & Euler’s Formula**](./code/foundations/01-complex-numbers.ipynb)
+
 ### 📖 Main Notebooks
 
 1. [**Introduction to Digital Images**](./code/01-introduction.ipynb)
