@@ -15,6 +15,7 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 ### 📘 Foundations
 
 1. [**Complex Numbers & Euler’s Formula**](./code/foundations/01-complex-numbers.ipynb)
+1. [**Linear Algebra Basics**](./code/foundations/02-linalg-basics.ipynb)
 
 ### 📖 Main Notebooks
 
