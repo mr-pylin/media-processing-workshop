@@ -16,6 +16,8 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 
 1. [**Complex Numbers & Euler’s Formula**](./code/foundations/01-complex-numbers.ipynb)
 1. [**Linear Algebra Basics**](./code/foundations/02-linalg-basics.ipynb)
+1. [**Introductions to Convolution**](./code/foundations/03-convolution.ipynb)
+1. [**Introductions to Frequency Transforms**](./code/foundations/04-transforms.ipynb)
 
 ### 📖 Main Notebooks
 
@@ -37,9 +39,7 @@ A collection of concepts and tools utilized in the main notebooks
 
 - [**Color Spaces**](./code/utils/color-space.ipynb)
 - [**Introductions to Compression**](./code/utils/compression.ipynb)
-- [**Prerequisites and Introductions to Convolution**](./code/utils/convolution.ipynb)
 - [**Quality Assessment Metrics**](./code/utils/quality-assessment.ipynb)
-- [**Prerequisites and Introductions to Frequency Transforms**](./code/utils/transform.ipynb)
 
 ## 📋 Prerequisites
 
