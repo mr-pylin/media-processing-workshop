@@ -39,6 +39,7 @@ A collection of concepts and tools utilized in the main notebooks
 
 - [**Color Spaces**](./code/utils/color-space.ipynb)
 - [**Introductions to Compression**](./code/utils/compression.ipynb)
+- [**All about Paddings**](./code/utils/padding.ipynb)
 - [**Quality Assessment Metrics**](./code/utils/quality-assessment.ipynb)
 
 ## 📋 Prerequisites
