@@ -42,6 +42,12 @@ A collection of concepts and tools utilized in the main notebooks
 - [**All about Paddings**](./code/utils/padding.ipynb)
 - [**Quality Assessment Metrics**](./code/utils/quality-assessment.ipynb)
 
+### 📖 Projects
+
+- [**DIP 3/e—Student Projects**](./code/projects/dip3e/)
+  - A set of student projects from Digital Image Processing, 3rd Edition. [View the projects](https://www.imageprocessingplace.com/DIP-3E/dip3e_student_projects.htm).
+  - [**chapter-02**](./code/projects/dip3e/chapter-02.ipynb)
+
 ## 📋 Prerequisites
 
 - 👨‍💻 **Programming Fundamentals**
