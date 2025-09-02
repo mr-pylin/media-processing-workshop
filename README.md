@@ -1,7 +1,7 @@
 # 📷 Media Processing Workshop
 
 [![License](https://img.shields.io/github/license/mr-pylin/media-processing-workshop?color=blue)](https://github.com/mr-pylin/media-processing-workshop/blob/main/LICENSE)
-[![Python Version](https://img.shields.io/badge/Python-3.13.1-yellow?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3131/)
+[![Python Version](https://img.shields.io/badge/Python-3.13.7-yellow?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3137/)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9eb774b7945449cdb86029e9093b3c73)](https://app.codacy.com/gh/mr-pylin/media-processing-workshop/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/psf/black)
 ![Repo Size](https://img.shields.io/github/repo-size/mr-pylin/media-processing-workshop?color=lightblue)
@@ -69,34 +69,34 @@ A collection of concepts and tools utilized in the main notebooks
 
 ## ⚙️ Setup
 
-This project requires Python **v3.10** or higher. It was developed and tested using Python **v3.13.1**. If you encounter issues running the specified version of dependencies, consider using this version of Python.
+This project requires Python **v3.10** or higher. It was developed and tested using Python **v3.13.7**. If you encounter issues running the specified version of dependencies, consider using this version of Python.
 
 ### 📝 List of Dependencies
 
-[![imagecodecs](https://img.shields.io/badge/imagecodecs-2025.3.30-008080)](https://pypi.org/project/imagecodecs/2025.3.30/)
-[![ipykernel](https://img.shields.io/badge/ipykernel-6.29.5-ff69b4)](https://pypi.org/project/ipykernel/6.29.5/)
-[![ipywidgets](https://img.shields.io/badge/ipywidgets-8.1.5-ff6347)](https://pypi.org/project/ipywidgets/8.1.5/)
-[![matplotlib](https://img.shields.io/badge/matplotlib-3.10.1-green)](https://pypi.org/project/matplotlib/3.10.1/)
-[![numpy](https://img.shields.io/badge/numpy-2.2.4-orange)](https://pypi.org/project/numpy/2.2.4/)
+[![imagecodecs](https://img.shields.io/badge/imagecodecs-2025.8.2-008080)](https://pypi.org/project/imagecodecs/2025.8.2/)
+[![ipykernel](https://img.shields.io/badge/ipykernel-6.30.1-ff69b4)](https://pypi.org/project/ipykernel/6.30.1/)
+[![matplotlib](https://img.shields.io/badge/matplotlib-3.10.6-green)](https://pypi.org/project/matplotlib/3.10.6/)
+[![numpy](https://img.shields.io/badge/numpy-2.3.2-orange)](https://pypi.org/project/numpy/2.3.2/)
 [![opencv-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.11.0.86-blue)](https://pypi.org/project/opencv-contrib-python/4.11.0.86/)
-[![pillow](https://img.shields.io/badge/pillow-11.1.0-cyan)](https://pypi.org/project/Pillow/11.1.0/)
+[![pillow](https://img.shields.io/badge/pillow-11.3.0-cyan)](https://pypi.org/project/Pillow/11.3.0/)
 [![scikit-image](https://img.shields.io/badge/scikit--image-0.25.2-darkblue)](https://pypi.org/project/scikit-image/0.25.2/)
-[![scipy](https://img.shields.io/badge/scipy-1.15.2-purple)](https://pypi.org/project/scipy/1.15.2/)
+[![scipy](https://img.shields.io/badge/scipy-1.16.1-purple)](https://pypi.org/project/scipy/1.16.1/)
+<!-- [![ipywidgets](https://img.shields.io/badge/ipywidgets-8.1.5-ff6347)](https://pypi.org/project/ipywidgets/8.1.5/) -->
 
 ### 📦 Installing Dependencies
 
-#### 📦 Method 1: Poetry (**Recommended** ✅)
+#### 📦 Method 1: uv (**Recommended** ✅)
 
-Use [**Poetry**](https://python-poetry.org/) for dependency management. It handles dependencies, virtual environments, and locking versions more efficiently than pip.  
-To install exact dependency versions specified in [**poetry.lock**](./poetry.lock) for consistent environments **without** installing the current project as a package:
+- Use [**uv**](https://docs.astral.sh/uv/) for dependency management. It handles dependencies, virtual environments, and locking versions more efficiently than pip.  
+- To install exact dependency versions specified in [**uv.lock**](./uv.lock) for consistent environments **without** installing the current project as a package:
 
 ```bash
-poetry install --no-root
+uv sync --no-install-project
 ```
 
 #### 📦 Method 2: Pip
 
-Install all dependencies listed in [**requirements.txt**](./requirements.txt) using [**pip**](https://pip.pypa.io/en/stable/installation/):
+- Install all dependencies listed in [**requirements.txt**](./requirements.txt) using [**pip**](https://pip.pypa.io/en/stable/installation/):
 
 ```bash
 pip install -r requirements.txt
@@ -111,7 +111,7 @@ pip install -r requirements.txt
 
 ✍️ **Notes**:  
 
-- It is **highly recommended** to stick with the exact dependency versions specified in [**poetry.lock**](./poetry.lock) or [**requirements.txt**](./requirements.txt) rather than using the latest package versions. The repository has been **tested** on these versions to ensure **compatibility** and **stability**.
+- It is **highly recommended** to stick with the exact dependency versions specified in [**uv.lock**](./uv.lock) or [**requirements.txt**](./requirements.txt) rather than using the latest package versions. The repository has been **tested** on these versions to ensure **compatibility** and **stability**.
 - This repository is **actively maintained**, and dependencies are **updated regularly** to the latest **stable** versions.
 - The **table of contents** embedded in the **notebooks** may not function correctly on **GitHub**.
 - For an improved experience, open the notebooks **locally** or view them via [**nbviewer**](https://nbviewer.org/github/mr-pylin/media-processing-workshop).

@@ -1,33 +1,40 @@
-[tool.poetry]
-package-mode = false
-name = "media_processing_workshop"
+[project]
+name = "media-processing-workshop"
+version = "0.1.0"
 description = "A comprehensive resource to explore media processing, from fundamental concepts to advanced techniques"
-authors = ["Amirhossein Heydari <amirhosseinheydari78@gmail.com>"]
-maintainers = ["Amirhossein Heydari <amirhosseinheydari78@gmail.com>"]
-license = "Apache-2.0"
-repository = "https://github.com/mr-pylin/media-processing-workshop"
+authors = [
+    {name = "Amirhossein Heydari", email =  "amirhosseinheydari78@gmail.com"}
+]
+maintainers = [
+    {name = "Amirhossein Heydari", email =  "amirhosseinheydari78@gmail.com"}
+]
 keywords = ["DIP", "digital image processing", "image processing", "media processing"]
 readme = "README.md"
+license = "Apache-2.0"
+license-files = [
+    "LICENSE",
+    "assets/images/original/LICENSE"
+]
+requires-python = ">=3.13.7"
+dependencies = [
+    "imagecodecs>=2025.8.2,<2026.0.0",
+    "matplotlib>=3.10.6,<4.0.0",
+    "numpy>=2.3.2,<3.0.0",
+    "opencv-contrib-python>=4.11.0.86,<5.0.0",
+    "pillow>=11.3.0,<12.0.0",
+    "scikit-image>=0.25.2,<1.0.0",
+    "scipy>=1.16.1,<2.0.0",
+]
 
-[tool.poetry.urls]
-"Amirhossein Heydari Homepage" = "https://mr-pylin.github.io"
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1,<7.0.0",
+    # "ipywidgets>=8.1.7,<9.0.0",
+]
 
-[tool.poetry.dependencies]
-python = "3.13.1"
-imagecodecs = "^2025.3.30"
-ipykernel = "^6.29.5"
-ipywidgets = "^8.1.5"
-matplotlib = "^3.10.1"
-numpy = "^2.2.4"
-opencv-contrib-python = "^4.11.0.86"
-pillow = "^11.1.0"
-PyWavelets = "^1.8.0"
-scikit-image = "^0.25.2"
-scipy= "^1.15.2"
+[project.urls]
+Repository = "https://github.com/mr-pylin/media-processing-workshop"
+MyHomepage = "https://mr-pylin.github.io"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.black]
+[tool.uv]
 line-length = 120
