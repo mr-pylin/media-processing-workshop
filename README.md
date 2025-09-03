@@ -12,12 +12,12 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 
 ## 📖 Table of Contents
 
-### 📘 Foundations
+### 📘 Essentials
 
-1. [**Complex Numbers & Euler’s Formula**](./code/foundations/01-complex-numbers.ipynb)
-1. [**Linear Algebra Basics**](./code/foundations/02-linalg-basics.ipynb)
-1. [**Introductions to Convolution**](./code/foundations/03-convolution.ipynb)
-1. [**Introductions to Frequency Transforms**](./code/foundations/04-transforms.ipynb)
+1. [**Complex Numbers & Euler’s Formula**](./code/base/01-complex-numbers.ipynb)
+1. [**Linear Algebra Basics**](./code/base/02-linalg-basics.ipynb)
+1. [**Introductions to Convolution**](./code/base/03-convolution.ipynb)
+1. [**Introductions to Frequency Transforms**](./code/base/04-transforms.ipynb)
 
 ### 📖 Main Notebooks
 
