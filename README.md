@@ -52,10 +52,10 @@ A collection of concepts and tools utilized in the main notebooks
 
 - 👨‍💻 **Programming Fundamentals**
   - Proficiency in **Python** (data types, control structures, functions, classes, etc.).
-    - My Python Workshop: [github.com/mr-pylin/python-workshop](https://github.com/mr-pylin/python-workshop)
+    - My Python Workshop: [**github.com/mr-pylin/python-workshop**](https://github.com/mr-pylin/python-workshop)
   - Experience with libraries like **NumPy** and **Matplotlib**.
-    - My NumPy Workshop: [github.com/mr-pylin/numpy-workshop](https://github.com/mr-pylin/numpy-workshop)
-    - My Data Visualization Workshop: [github.com/mr-pylin/data-visualization-workshop](https://github.com/mr-pylin/data-visualization-workshop)
+    - My NumPy Workshop: [**github.com/mr-pylin/numpy-workshop**](https://github.com/mr-pylin/numpy-workshop)
+    - My Data Visualization Workshop: [**github.com/mr-pylin/data-visualization-workshop**](https://github.com/mr-pylin/data-visualization-workshop)
 - 🔣 **Mathematics for Machine Learning**
   - 🔲 **Linear Algebra**: Vectors, matrices, matrix operations.
     - [**Linear Algebra Review and Reference**](https://www.cs.cmu.edu/%7Ezkolter/course/linalg/linalg_notes.pdf) written by [*Zico Kolter*](https://zicokolter.com).
@@ -90,17 +90,17 @@ This project requires Python **v3.10** or higher. It was developed and tested us
 - Use [**uv**](https://docs.astral.sh/uv/) for dependency management. It handles dependencies, virtual environments, and locking versions more efficiently than pip.  
 - To install exact dependency versions specified in [**uv.lock**](./uv.lock) for consistent environments **without** installing the current project as a package:
 
-```bash
-uv sync --no-install-project
-```
+  ```bash
+  uv sync --no-install-project
+  ```
 
 #### 📦 Method 2: Pip
 
 - Install all dependencies listed in [**requirements.txt**](./requirements.txt) using [**pip**](https://pip.pypa.io/en/stable/installation/):
 
-```bash
-pip install -r requirements.txt
-```
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 ### 🛠️ Usage Instructions
 
