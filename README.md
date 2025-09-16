@@ -181,10 +181,10 @@ You are free to **use**, **modify**, and **distribute** this code, but you **mus
 ### ©️ Copyright Information
 
 - **Original Images**:
-  - The images located in the [./assets/images/original/](./assets/images/original/) folder are licensed under the **[CC BY-ND 4.0](./assets/images/original/LICENSE)**.
+  - The images located in the [**./assets/images/original/**](./assets/images/original/) folder are licensed under the **[CC BY-ND 4.0](./assets/images/original/LICENSE)**.
   - Note: This license restricts derivative works, meaning you may share these images but cannot modify them.
 
-- The images located in the [./assets/images/dip_3rd/](./assets/images/dip_3rd/) folder are licensed under the table below:  
+- The images located in the [**./assets/images/dip_3rd/**](./assets/images/dip_3rd/) folder are licensed under the table below:  
 
   | Image                                                                                      | Copyright Owner                            | Address                               |
   |--------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------|
@@ -195,11 +195,18 @@ You are free to **use**, **modify**, and **distribute** this code, but you **mus
   | [CH06_Fig0638(a)(lenna_RGB).tif](./assets/images/dip_3rd/CH06_Fig0638(a)(lenna_RGB).tif)    | Public domain                              | -                                     |
   | [CH06_FigP0606(color_bars).tif](./assets/images/dip_3rd/CH06_FigP0606(color_bars).tif)      | -                                          | -                                     |
 
+- **Library-specific Images**:
+
+  - The images located in the [**assets/images/libraries/opencv/**](./assets/images/libraries/opencv/) folder are sourced from the [**OpenCV documentation**](https://opencv.org/) and are licensed under the [**Apache License 2.0**](https://opencv.org/license/).
+  - The images located in the [**assets/images/libraries/pillow/**](./assets/images/libraries/pillow/) folder are sourced from the [**Pillow documentation**](https://pillow.readthedocs.io/en/stable/) and are licensed under the [**MIT-CMU License**](https://pillow.readthedocs.io/en/stable/about.html).
+  - The images located in the [**assets/images/libraries/scikit-image/**](./assets/images/libraries/scikit-image/) folder are sourced from the [**scikit-image documentation**](https://scikit-image.org/docs/) and are licensed under the [**BSD 3-Clause License**](https://scikit-image.org/docs/0.25.x/license.html).
+  - The images located in the [**assets/images/libraries/scipy/**](./assets/images/libraries/scipy/) folder are sourced from the [**SciPy documentation**](https://scipy.org/) and are licensed under the [**BSD 3-Clause License**](https://scipy.org/faq/).
+
 - **Third-Party Assets**:
 
-  - Additional images located in [./assets/images/third_party/](./assets/images/third_party/) are used with permission or according to their original licenses.
-  - Attributions and references to the files included in [./assets/images/third_party/](./assets/images/third_party/) are included in the code where these images are used.
+  - Additional images located in [**./assets/images/third_party/**](./assets/images/third_party/) are used with permission or according to their original licenses.
+  - Attributions and references to the files included in [**./assets/images/third_party/**](./assets/images/third_party/) are included in the code where these images are used.
 
 - **Miscellaneous assets**:
 
-  - The images found in [./assets/images/misc/](./assets/images/misc/) are modified versions of the ones listed above.
+  - The images found in [**./assets/images/misc/**](./assets/images/misc/) are modified versions of the ones listed above.
