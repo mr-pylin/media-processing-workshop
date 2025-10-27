@@ -26,7 +26,7 @@ A comprehensive resource to explore media processing, from fundamental concepts 
 1. [**Interpolating Images**](./code/03-interpolation.ipynb)
 1. [**Apply Geometric Transformations**](./code/04-geometric-transformation.ipynb)
 1. [**Intensity Transformations**](./code/05-intensity-transformation.ipynb)
-1. [**Histogram Processing**](./code/06-histogram.ipynb)
+1. [**Histogram Processing**](./code/06-histogram-processing.ipynb)
 1. [**Spatial Filtering using Convolution**](./code/07-spatial-filtering.ipynb)
 1. [**Frequency Filtering using Fourier & Cosine Transform**](./code/08-frequency-filtering.ipynb)
 1. [**Multi-Resolution Analysis (Wavelet Transform)**](./code/09-multi-resolution-analysis.ipynb)
