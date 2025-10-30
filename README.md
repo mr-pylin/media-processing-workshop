@@ -75,10 +75,13 @@ This project requires Python **v3.10** or higher. It was developed and tested us
 
 [![imagecodecs](https://img.shields.io/badge/imagecodecs-2025.8.2-008080)](https://pypi.org/project/imagecodecs/2025.8.2/)
 [![ipykernel](https://img.shields.io/badge/ipykernel-7.0.1-ff69b4)](https://pypi.org/project/ipykernel/7.0.1/)
+[![ipympl](https://img.shields.io/badge/ipympl-0.9.8-purple)](https://pypi.org/project/ipympl/0.9.8/)
+[![ipywidgets](https://img.shields.io/badge/ipywidgets-8.1.7-ff6347)](https://pypi.org/project/ipywidgets/8.1.7/)
 [![matplotlib](https://img.shields.io/badge/matplotlib-3.10.7-green)](https://pypi.org/project/matplotlib/3.10.7/)
 [![numpy](https://img.shields.io/badge/numpy-2.3.4-orange)](https://pypi.org/project/numpy/2.3.4/)
 [![opencv-contrib-python](https://img.shields.io/badge/opencv--contrib--python-4.11.0.86-blue)](https://pypi.org/project/opencv-contrib-python/4.11.0.86/)
 [![pillow](https://img.shields.io/badge/pillow-12.0.0-cyan)](https://pypi.org/project/Pillow/12.0.0/)
+[![PyWavelets](https://img.shields.io/badge/PyWavelets-1.9.0-red)](https://pypi.org/project/PyWavelets/1.9.0/)
 [![scikit-image](https://img.shields.io/badge/scikit--image-0.25.2-darkblue)](https://pypi.org/project/scikit-image/0.25.2/)
 [![scipy](https://img.shields.io/badge/scipy-1.16.2-purple)](https://pypi.org/project/scipy/1.16.2/)
 
